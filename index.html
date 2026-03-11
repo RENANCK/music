@@ -68,88 +68,153 @@
 
         // --- BANCO DE DADOS ---
         const bancoDeMusicas = {
-    "trap": [
-        "https://open.spotify.com/track/6JH5wCoto58vgqa61jvazc",
-        "https://open.spotify.com/track/5Y2QDfKgRS6lPkyVITN4P0",
-        "https://open.spotify.com/track/7ofEB6lVX7gWvONbKhOXf9",
-        "https://open.spotify.com/track/38NukRP5zIlRv9XlKtwuAJ",
-        "https://open.spotify.com/track/7sJPbhbhua4dgo2syBBp7W",
-        "https://open.spotify.com/track/39YsVPqKn69hm7raswGJgB",
-        "https://open.spotify.com/track/50uHG6oDyUrgj7PDaNu1XE",
-        "https://open.spotify.com/track/35df5zF0HOKz9bfNjOA7tZ",
-        "https://open.spotify.com/track/2WIg2OljTQEbja74ZGOrxQ",
-        "https://open.spotify.com/track/0aksmcRh5LIs4DAL3pfcoY",
-        "https://open.spotify.com/track/5XXRWfxxyvZ7Bhy4yHzE7g",
-        "https://open.spotify.com/track/5wTHqpJDnoGW562HQW1BmC",
-        "https://open.spotify.com/track/5TKTBDb9p1npApJLuQLd7M",
-        "https://open.spotify.com/track/6sHWMvDDdgNNvkJ7JHktdl",
-        "https://open.spotify.com/track/31X6ihiAWsNnKRky0R8532",
-        "https://open.spotify.com/track/5gXH6r92zVkhgP1BF73J4b",
-        "https://open.spotify.com/track/0qsKefQyXCzaxjHbOcd8IU",
-        "https://open.spotify.com/track/7a9sHTuIYHpwiAFUMgm7A7",
-        "https://open.spotify.com/track/5SuhtRofSXwsvto7BXUk9z",
-        "https://open.spotify.com/track/3Sa2gVQioE31DcG4nKNDqD",
-        "https://open.spotify.com/track/7tcO4ICvtftGWI19MnUJXM",
-        "https://open.spotify.com/track/4Q0j8IUJaSxNROmna9IWWX",
-        "https://open.spotify.com/track/6QsHhB0W9GtLF3cI7mUVkQ",
-        "https://open.spotify.com/track/2fTTmjyF7pfarDBAbsJkvb",
-        "https://open.spotify.com/track/2fdjxVk5Wo1zMkTYdj4t7N",
-        "https://open.spotify.com/track/1qyiBNYS01TjMkmoeTLJXN",
-        "https://open.spotify.com/track/5oI9blwsXC8AkTWw6wASY8",
-        "https://open.spotify.com/track/0bV0LtjtZH76gD0ujPYS3n",
-        "https://open.spotify.com/track/2XymTaHTrQWDEuSyhfZvqF",
-        "https://open.spotify.com/track/4jxP7Bo9O5lC75Ni8l8qyH",
-        "https://open.spotify.com/track/5kuUOpHZlZjL8b7HXkxRsm",
-        "https://open.spotify.com/track/7Bl0BMBcbMjWPZdZEkW8oR",
-        "https://open.spotify.com/track/2FY5SkFDjOBqhtNg2ehtz2",
-        "https://open.spotify.com/track/3ua3rqwBNmeGeQfcKnA3bT",
-        "https://open.spotify.com/track/1RgJ4lexKGNBlKnyxB5SRt",
-        "https://open.spotify.com/track/6Vgn3IEUkWs3d6og029Gtm",
-        "https://open.spotify.com/track/6VqaSxaXBFn7sAh2DIZQpp",
-        "https://open.spotify.com/track/23zqFHNiDYWoayPU5k0IIR",
-        "https://open.spotify.com/track/3c3JcAioFbRXXWQwkdfmZH",
-        "https://open.spotify.com/track/05GL0js4ONij9y35v6wIpT",
-        "https://open.spotify.com/track/1Nmcs8zk7LfcvHRgLtTM5J",
-        "https://open.spotify.com/track/0sy2mtvcM7V5ETtmQIbGVt",
-        "https://open.spotify.com/track/1K14aw84e0i5IHFHkq7aNn",
-        "https://open.spotify.com/track/4m8kG46clzxMxyrDuFo1Uq",
-        "https://open.spotify.com/track/4ZdTYjgbxz3TJfB9IsBMAZ"
-    ],
-    "nostalgica": [
-        "https://open.spotify.com/track/4kLLWz7srcuLKA7Et40PQR",
-        "https://open.spotify.com/track/2ENexcMEMsYk0rVJigVD3i",
-        "https://open.spotify.com/track/1mea3bSkSGXuIRvnydlB5b",
-        "https://open.spotify.com/track/3E7dfMvvCLUddWissuqMwr",
-        "https://open.spotify.com/track/6fNhZRFEkBfgW39W3wKARJ",
-        "https://open.spotify.com/track/7w87IxuO7BDcJ3YUqCyMTT",
-        "https://open.spotify.com/track/15JINEqzVMv3SvJTAXAKED",
-        "https://open.spotify.com/track/2Foc5Q5nqNiosCNqttzHof",
-        "https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn",
-        "https://open.spotify.com/track/62yJjFtgkhUrXktIoSjgP2",
-        "https://open.spotify.com/track/2P4OICZRVAQcYAV2JReRfj",
-        "https://open.spotify.com/track/6i0V12jOa3mr6uu4WYhUBr",
-        "https://open.spotify.com/track/3U4isOIWM3VvDubwSI3y7a",
-        "https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
-        "https://open.spotify.com/track/3S0OXQeoh0w6AY8WQVckRW",
-        "https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB",
-        "https://open.spotify.com/track/2ePtv8MlBO9nuuXABqAfEX",
-        "https://open.spotify.com/track/696DnlkuDOXcMAnKlTgXXK",
-        "https://open.spotify.com/track/3Dv1eDb0MEgF93GpLXlucZ",
-        "https://open.spotify.com/track/7eJMfftS33KTjuF7lTsMCx",
-        "https://open.spotify.com/track/3FdopY118eIYv5COjji7Sa",
-        "https://open.spotify.com/track/3GZoWLVbmxcBys6g0DLFLf",
-        "https://open.spotify.com/track/1ghvzmzpx2nnrbx7wtpMgo",
-        "https://open.spotify.com/track/51Fjme0JiitpyXKuyQiCDo",
-        "https://open.spotify.com/track/2mlGPkAx4kwF8Df0GlScsC",
-        "https://open.spotify.com/track/3M214U0mwSm041GsQR3nrO",
-        "https://open.spotify.com/track/0F7FA14euOIX8KcbEturGH",
-        "https://open.spotify.com/track/1qYKWcEOrh2tM8PlgIm8K1",
-        "https://open.spotify.com/track/6kxwc5gVuazlFo178WoVbF",
-        "https://open.spotify.com/track/2uXlHCUbq9OMUwx3hrk06o",
-        "https://open.spotify.com/track/0RiRZpuVRbi7oqRdSMwhQY",
-        "https://open.spotify.com/track/7lQ8MOhq6IN2w8EYcFNSUk",
-        "https://open.spotify.com/track/21jGcNKet2qwijlDFuPiPb",
-        "https://open.spotify.com/track/0d28khcov6AiegSCpG5TuT",
+            "trap": [
+                "https://open.spotify.com/track/6JH5wCoto58vgqa61jvazc", "https://open.spotify.com/track/5Y2QDfKgRS6lPkyVITN4P0", "https://open.spotify.com/track/7ofEB6lVX7gWvONbKhOXf9", "https://open.spotify.com/track/38NukRP5zIlRv9XlKtwuAJ", "https://open.spotify.com/track/7sJPbhbhua4dgo2syBBp7W", "https://open.spotify.com/track/39YsVPqKn69hm7raswGJgB", "https://open.spotify.com/track/50uHG6oDyUrgj7PDaNu1XE", "https://open.spotify.com/track/35df5zF0HOKz9bfNjOA7tZ", "https://open.spotify.com/track/2WIg2OljTQEbja74ZGOrxQ", "https://open.spotify.com/track/0aksmcRh5LIs4DAL3pfcoY", "https://open.spotify.com/track/5XXRWfxxyvZ7Bhy4yHzE7g", "https://open.spotify.com/track/5wTHqpJDnoGW562HQW1BmC", "https://open.spotify.com/track/5TKTBDb9p1npApJLuQLd7M", "https://open.spotify.com/track/6sHWMvDDdgNNvkJ7JHktdl", "https://open.spotify.com/track/31X6ihiAWsNnKRky0R8532", "https://open.spotify.com/track/5gXH6r92zVkhgP1BF73J4b", "https://open.spotify.com/track/0qsKefQyXCzaxjHbOcd8IU", "https://open.spotify.com/track/7a9sHTuIYHpwiAFUMgm7A7", "https://open.spotify.com/track/5SuhtRofSXwsvto7BXUk9z", "https://open.spotify.com/track/3Sa2gVQioE31DcG4nKNDqD", "https://open.spotify.com/track/7tcO4ICvtftGWI19MnUJXM", "https://open.spotify.com/track/4Q0j8IUJaSxNROmna9IWWX", "https://open.spotify.com/track/6QsHhB0W9GtLF3cI7mUVkQ", "https://open.spotify.com/track/2fTTmjyF7pfarDBAbsJkvb", "https://open.spotify.com/track/2fdjxVk5Wo1zMkTYdj4t7N", "https://open.spotify.com/track/1qyiBNYS01TjMkmoeTLJXN", "https://open.spotify.com/track/5oI9blwsXC8AkTWw6wASY8", "https://open.spotify.com/track/0bV0LtjtZH76gD0ujPYS3n", "https://open.spotify.com/track/2XymTaHTrQWDEuSyhfZvqF", "https://open.spotify.com/track/4jxP7Bo9O5lC75Ni8l8qyH", "https://open.spotify.com/track/5kuUOpHZlZjL8b7HXkxRsm", "https://open.spotify.com/track/7Bl0BMBcbMjWPZdZEkW8oR", "https://open.spotify.com/track/2FY5SkFDjOBqhtNg2ehtz2", "https://open.spotify.com/track/3ua3rqwBNmeGeQfcKnA3bT", "https://open.spotify.com/track/1RgJ4lexKGNBlKnyxB5SRt", "https://open.spotify.com/track/6Vgn3IEUkWs3d6og029Gtm", "https://open.spotify.com/track/6VqaSxaXBFn7sAh2DIZQpp", "https://open.spotify.com/track/23zqFHNiDYWoayPU5k0IIR", "https://open.spotify.com/track/3c3JcAioFbRXXWQwkdfmZH", "https://open.spotify.com/track/05GL0js4ONij9y35v6wIpT", "https://open.spotify.com/track/1Nmcs8zk7LfcvHRgLtTM5J", "https://open.spotify.com/track/0sy2mtvcM7V5ETtmQIbGVt", "https://open.spotify.com/track/1K14aw84e0i5IHFHkq7aNn", "https://open.spotify.com/track/4m8kG46clzxMxyrDuFo1Uq", "https://open.spotify.com/track/4ZdTYjgbxz3TJfB9IsBMAZ"
+            ],
+            "nostalgica": [
+                "https://open.spotify.com/track/4kLLWz7srcuLKA7Et40PQR", "https://open.spotify.com/track/2ENexcMEMsYk0rVJigVD3i", "https://open.spotify.com/track/1mea3bSkSGXuIRvnydlB5b", "https://open.spotify.com/track/3E7dfMvvCLUddWissuqMwr", "https://open.spotify.com/track/6fNhZRFEkBfgW39W3wKARJ", "https://open.spotify.com/track/7w87IxuO7BDcJ3YUqCyMTT", "https://open.spotify.com/track/15JINEqzVMv3SvJTAXAKED", "https://open.spotify.com/track/2Foc5Q5nqNiosCNqttzHof", "https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn", "https://open.spotify.com/track/62yJjFtgkhUrXktIoSjgP2", "https://open.spotify.com/track/2P4OICZRVAQcYAV2JReRfj", "https://open.spotify.com/track/6i0V12jOa3mr6uu4WYhUBr", "https://open.spotify.com/track/3U4isOIWM3VvDubwSI3y7a", "https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P", "https://open.spotify.com/track/3S0OXQeoh0w6AY8WQVckRW", "https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB", "https://open.spotify.com/track/2ePtv8MlBO9nuuXABqAfEX", "https://open.spotify.com/track/696DnlkuDOXcMAnKlTgXXK", "https://open.spotify.com/track/3Dv1eDb0MEgF93GpLXlucZ", "https://open.spotify.com/track/7eJMfftS33KTjuF7lTsMCx", "https://open.spotify.com/track/3FdopY118eIYv5COjji7Sa", "https://open.spotify.com/track/3GZoWLVbmxcBys6g0DLFLf", "https://open.spotify.com/track/1ghvzmzpx2nnrbx7wtpMgo", "https://open.spotify.com/track/51Fjme0JiitpyXKuyQiCDo", "https://open.spotify.com/track/2mlGPkAx4kwF8Df0GlScsC", "https://open.spotify.com/track/3M214U0mwSm041GsQR3nrO", "https://open.spotify.com/track/0F7FA14euOIX8KcbEturGH", "https://open.spotify.com/track/1qYKWcEOrh2tM8PlgIm8K1", "https://open.spotify.com/track/6kxwc5gVuazlFo178WoVbF", "https://open.spotify.com/track/2uXlHCUbq9OMUwx3hrk06o", "https://open.spotify.com/track/0RiRZpuVRbi7oqRdSMwhQY", "https://open.spotify.com/track/7lQ8MOhq6IN2w8EYcFNSUk", "https://open.spotify.com/track/21jGcNKet2qwijlDFuPiPb", "https://open.spotify.com/track/0d28khcov6AiegSCpG5TuT", "https://open.spotify.com/track/6K4t31amVTZDgR3sKmwUJJ", "https://open.spotify.com/track/22VdIZQfgXJea34mQxlt81", "https://open.spotify.com/track/7fBv7CLKzipRk6EC6TWHOB", "https://open.spotify.com/track/0u2P5u6lvoDfwTYjAADbn4", "https://open.spotify.com/track/7BKLCZ1jbUBVqRi2FVlTVw", "https://open.spotify.com/track/2Fxmhks0bxGSBdJ92vM42m", "https://open.spotify.com/track/0KKkJNfGyhkQ5aFogxQAPU", "https://open.spotify.com/track/4v7DCN09hgXkKazefkznDQ", "https://open.spotify.com/track/1TfqLAPs4K3s2rJMoCokcS", "https://open.spotify.com/track/2Z8WuEywRWYTKe1NybPQEW", "https://open.spotify.com/track/0qOnSQQF0yzuPWsXrQ9paz", "https://open.spotify.com/track/3AJwUDP919kvQ9QcozQPxg", "https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v", "https://open.spotify.com/track/1HNkqx9Ahdgi1Ixy2xkKkL", "https://open.spotify.com/track/34gCuhDGsG4bRPIf9bb02f", "https://open.spotify.com/track/3rmo8F54jFF8OgYsqTxm5d", "https://open.spotify.com/track/0vZ97gHhemKm6c64hTfJNA"
+            ],
+            "mpb": [
+                "https://open.spotify.com/track/3IFWQxX0TlPCKlyju1kAHB", "https://open.spotify.com/track/1e9huqPFbteN6gBWFhKrT0", "https://open.spotify.com/track/5DHsGfjaxIpt0v0dPGaWdI", "https://open.spotify.com/track/1dociHCC4kVIaZu4Sg9ip6", "https://open.spotify.com/track/7IsUsMa9T63GIg9Uv0dUX2", "https://open.spotify.com/track/290rUsOclQPPHHBACyViGT", "https://open.spotify.com/track/6owwZC8gUvrBuygvOHaYXb", "https://open.spotify.com/track/3eVyDZXJPJzUKkyWP6eLyc", "https://open.spotify.com/track/4tPMqGhipBJsJEGLyrJMzk", "https://open.spotify.com/track/2DREhftHdD8pRmNdSs6nyF", "https://open.spotify.com/track/3iof6EclqePezHDibBiykI", "https://open.spotify.com/track/3PavsmA9S6QA5lNmmsuOif", "https://open.spotify.com/track/2GAFZG9Z7UGS1iMm4Idrnr", "https://open.spotify.com/track/4SpqtLElDsO6KGbd4ub96Z", "https://open.spotify.com/track/67UiC5PaQlxa2uVugbwjw3", "https://open.spotify.com/track/7oo3L1ZPEQSavDVSnlOvDa", "https://open.spotify.com/track/6BmiOymAiOcmThWDKLysFK", "https://open.spotify.com/track/0VUgbCK0k8QWGpLiEV8YYZ", "https://open.spotify.com/track/1fJ863UqhSwWpqrkwkcATG", "https://open.spotify.com/track/5xpumjGGcdWvqWxYVrd7jI", "https://open.spotify.com/track/3FIuBxOxuQ6kYy8JO0gq2a", "https://open.spotify.com/track/0aoQV1TuaTrcpJaMfJ3wgj", "https://open.spotify.com/track/2Yk0HvfTaijA47aM0Fj88u", "https://open.spotify.com/track/10C3nAydzBvNfaY86NwUuA", "https://open.spotify.com/track/5AKrqJ7RiOCfCaaCuxxGk0", "https://open.spotify.com/track/4lwUIfJPyeKqGhG9KtHtIv", "https://open.spotify.com/track/7CdDIvw3jvjNaIs5m3mM4A", "https://open.spotify.com/track/6J4gdn9L1im9uqzqBLhht6", "https://open.spotify.com/track/0Dqd8e4lCG1EYPmyzzR53I", "https://open.spotify.com/track/6zBw2Qqqj2daIoST9XIJC4", "https://open.spotify.com/track/01mbH2pSWyHgcmWKDbZU5b", "https://open.spotify.com/track/174YvAb800yXcU2keQ3IkY", "https://open.spotify.com/track/6Pa6VpdGS8OfiVOEnNAHHw", "https://open.spotify.com/track/60FRsJnxV5OC0ueBwYB0yT", "https://open.spotify.com/track/4dkFG1pSn2czTCkLncpnep", "https://open.spotify.com/track/1ikL8Lemlm3N58ahyLxIvP", "https://open.spotify.com/track/7xpDGoUGbtaquk5xMvzwTh", "https://open.spotify.com/track/74Rb8GLoyNYnjDIAnpUuhG", "https://open.spotify.com/track/2kVm4qAAXR7qUfHdiKg0qI", "https://open.spotify.com/track/7hkQhMFq4EOTYwX3I7cgmA", "https://open.spotify.com/track/6uFwhB7gVs7ExCAfJD5BWg", "https://open.spotify.com/track/0NFVg74sSsdU1gNc9xfpIO", "https://open.spotify.com/track/0ZPquQV2aKmDfwPjvMdvRp", "https://open.spotify.com/track/1GMXM1ghhPvS76g9zjQRaU", "https://open.spotify.com/track/7hqKYctgAHBob8rGiFE14q", "https://open.spotify.com/track/6DGsHzKbcTsayqZx8CbY0W", "https://open.spotify.com/track/5kV7zUqQqd8rvYX82GoWCg", "https://open.spotify.com/track/2rHIvPFa91dJ7ZbcqtMtUs", "https://open.spotify.com/track/2MhSpxvfk6q70jPDYAdYMX", "https://open.spotify.com/track/1bqRtNOcT1QiV1j87IoATA", "https://open.spotify.com/track/2Px3PZ2qq2uFpRBpfVx8A5", "https://open.spotify.com/track/4fz5scGzatrI7trZIshpys", "https://open.spotify.com/track/7F1cbFaGSfZE1GTh6wKIAr", "https://open.spotify.com/track/5lvvqOEWpUvs2jaFkQTFWJ"
+            ],
+            "motivacao": [
+                "https://open.spotify.com/track/4M7bbRsVNB8iWQaX8Sbfln", "https://open.spotify.com/track/2CnjdM7i26Y1kvN3lyuDOl", "https://open.spotify.com/track/006pMMCuRo2TFjh8sNGSov", "https://open.spotify.com/track/7MnT7msJZg3XBAS0OTfGrB", "https://open.spotify.com/track/1ZdhOMWyFR8Iv9eylMGYg2", "https://open.spotify.com/track/4woTEX1wYOTGDqNXuavlRC", "https://open.spotify.com/track/2JLlkW8sNBoEpSCHJODPDH", "https://open.spotify.com/track/3E7heceGl4ojbkWXyBiLSL", "https://open.spotify.com/track/6IZvVAP7VPPnsGX6bvgkqg", "https://open.spotify.com/track/6b37xrsNCWYIUphFBazqD6", "https://open.spotify.com/track/2CGNAOSuO1MEFCbBRgUzjd", "https://open.spotify.com/track/74tLlkN3rgVzRqQJgPfink", "https://open.spotify.com/track/2g6tReTlM2Akp41g0HaeXN", "https://open.spotify.com/track/0fX4oNGBWO3dSGUZcVdVV2", "https://open.spotify.com/track/7KA4W4McWYRpgf0fWsJZWB", "https://open.spotify.com/track/7rbECVPkY5UODxoOUVKZnA", "https://open.spotify.com/track/3xKsf9qdS1CyvXSMEid6g8", "https://open.spotify.com/track/4k6Uh1HXdhtusDW5y8Gbvy", "https://open.spotify.com/track/3vQ4T78TTMOjQXGfXVKQJo", "https://open.spotify.com/track/6K4t31amVTZDgR3sKmwUJJ", "https://open.spotify.com/track/5hM5arv9KDbCHS0k9uqwjr", "https://open.spotify.com/track/6PGoSes0D9eUDeeAafB2As", "https://open.spotify.com/track/0fv2KH6hac06J86hBUTcSf", "https://open.spotify.com/track/5hVghJ4KaYES3BFUATCYn0", "https://open.spotify.com/track/5iXhf4c9xUBVA02wMj18G3", "https://open.spotify.com/track/3ggHnMqTRoUm0FMEIL7oiS", "https://open.spotify.com/track/3TdrFEicUW7JS0Lw5DzQE8", "https://open.spotify.com/track/7ATrsjW0puENy7OWZOENnq", "https://open.spotify.com/track/2LBqCSwhJGcFQeTHMVGwy3", "https://open.spotify.com/track/1OubIZ0ARYCUq5kceYUQiO", "https://open.spotify.com/track/6DH13QYXK7lKkYHSU88N48", "https://open.spotify.com/track/6jbYpRPTEFl1HFKHk1IC0m", "https://open.spotify.com/track/6xV7Be6XEvkSnighmh2Tzj", "https://open.spotify.com/track/5TxRUOsGeWeRl3xOML59Ai", "https://open.spotify.com/track/3tFed7YsjGnIfxeLEQwx3R", "https://open.spotify.com/track/41fWOLOAoyRdiN2kjvmCef", "https://open.spotify.com/track/2YF90rAMJp3QCCZN6zBXOA", "https://open.spotify.com/track/7wFEzF8FbofVlQS1OcbghM", "https://open.spotify.com/track/6tJFtthY0rI1x06qb8NjK0", "https://open.spotify.com/track/1jvjHwbJm8yhbivJ03hmgQ", "https://open.spotify.com/track/1v1XAFb4TsF5Zb0JOp1axS", "https://open.spotify.com/track/6AnO2VhMq5G5bDPNMqCKJB", "https://open.spotify.com/track/61GtE5Kvnt5TvYgzxwPKlG", "https://open.spotify.com/track/3eTgg18rKBD30Hef1gv0wz", "https://open.spotify.com/track/5TRPicyLGbAF2LGBFbHGvO", "https://open.spotify.com/track/0y60itmpH0aPKsFiGxmtnh", "https://open.spotify.com/track/7yNf9YjeO5JXUE3JEBgnYc", "https://open.spotify.com/track/0JmnkIqdlnUzPaf8sqBRs3"
+            ],
+            "infinite": [
+                "https://open.spotify.com/track/1bVGMa1rSx3CoCut8pZabA", "https://open.spotify.com/track/7cH6qA1IOGTtTECYVHnDEi", "https://open.spotify.com/track/6lCcA1ugWuQPBCHXecSwc8", "https://open.spotify.com/track/6PCUP3dWmTjcTtXY02oFdT", "https://open.spotify.com/track/5Qnrgqy1pAm9GyNQOgyVFz", "https://open.spotify.com/track/7LZgdL0MxiElfaKZbuuE4l", "https://open.spotify.com/track/5jgFfDIR6FR0gvlA56Nakr", "https://open.spotify.com/track/5GjPQ0eI7AgmOnADn1EO6Q", "https://open.spotify.com/track/00oZhqZIQfL9P5CjOP6JsO", "https://open.spotify.com/track/6rHh8urosEFRI67xVa6fzU", "https://open.spotify.com/track/4U45aEWtQhrm8A5mxPaFZ7", "https://open.spotify.com/track/2TjdnqlpwOjhijHCwHCP2d", "https://open.spotify.com/track/6mFkJmJqdDVQ1REhVfGgd1", "https://open.spotify.com/track/3TO7bbrUKrOSPGRTB5MeCz", "https://open.spotify.com/track/1TKTiKp3zbNgrBH2IwSwIx", "https://open.spotify.com/track/0ZPquQV2aKmDfwPjvMdvRp", "https://open.spotify.com/track/42lqBT5a04LkFHjiuVVBHY", "https://open.spotify.com/track/0dHTMMFAzlk164gZ7YB1rG", "https://open.spotify.com/track/6X9rlFcbOE0SsrarJ8PFMQ", "https://open.spotify.com/track/2pg5jMIT8VlxYnwWFff9UT", "https://open.spotify.com/track/3Am0IbOxmvlSXro7N5iSfZ", "https://open.spotify.com/track/5CQ30WqJwcep0pYcV4AMNc", "https://open.spotify.com/track/0KZodeWxqxd88F9wY1cqgs", "https://open.spotify.com/track/4IvZLDtwBHmBmwgDIUbuwa", "https://open.spotify.com/track/7wCmS9TTVUcIhRalDYFgPy", "https://open.spotify.com/track/5Qe7NHxeLAn8KoLTNLSdwe", "https://open.spotify.com/track/3AhXZa8sUQht0UEdBJgpGc", "https://open.spotify.com/track/3RkQ3UwOyPqpIiIvGVewuU", "https://open.spotify.com/track/5QUZjrm4nF5SrT1JEQbhV0"
+            ],
+            "foco": [
+                "https://open.spotify.com/track/5bFYHM769qVITZsNcS9zJ2", "https://open.spotify.com/track/4R72jtYS6pFwkFX4F1l7og", "https://open.spotify.com/track/5jwuSpkdatOsGVpGGIb2lW", "https://open.spotify.com/track/62ffNjRzffaDFlqSFXp6lK", "https://open.spotify.com/track/39fDpiJz9Y9mqzDOxfLz2s", "https://open.spotify.com/track/46auS2oScSIKsOLwD23UQn", "https://open.spotify.com/track/3zvhPaxkMw47CWjL1QcPZW", "https://open.spotify.com/track/5FysPdVhnvb3d0y9rl4ALB", "https://open.spotify.com/track/4KPzYCxP458oL7SGx1BRME", "https://open.spotify.com/track/4kUuK9fPK3HB8PD7lUV8DJ", "https://open.spotify.com/track/5iQfxOUnvlO6GykZKxp1Ec", "https://open.spotify.com/track/6dBhSWJOUmFCvL27QmEDKa", "https://open.spotify.com/track/0tTLdFR4pAM0NsadpCmnnn", "https://open.spotify.com/track/3x0Ev9GYhK5a76tgNGif8F", "https://open.spotify.com/track/1STLeyZbOoxwqVC1K8MoCZ", "https://open.spotify.com/track/4ZhC88Wn5faPRsMiAa2dq2", "https://open.spotify.com/track/3FfA55ggjwufaZWGtK2bzS", "https://open.spotify.com/track/2yecGzYzXxNqIlKrbJ11wm", "https://open.spotify.com/track/1cMGNdx9E1nfD7sDy7aq85", "https://open.spotify.com/track/7EBjKMkOVtOPgd1mb2nswc", "https://open.spotify.com/track/5B0E2RbnXSzGxUYbT40ytE", "https://open.spotify.com/track/6E2zpObvlU68caMNkA9erU", "https://open.spotify.com/track/23Goxbdet4dLH2jHj7nOPw", "https://open.spotify.com/track/4yzJjwddFU3zdHjMZoWTd2", "https://open.spotify.com/track/41m8VonEFx2xk9eRjtscPe", "https://open.spotify.com/track/6jQ5HZkSRVjI1jEHCFtMSg", "https://open.spotify.com/track/6GrRoHXd2Ssy4A5o9MmpSQ", "https://open.spotify.com/track/5qsTAxEyBFG9bllKz8VkpV", "https://open.spotify.com/track/4sF1b4xZSgh14mpbjrpAxN", "https://open.spotify.com/track/4bffRYzFzspS8vHEZyO4yT", "https://open.spotify.com/track/2wGX9QkxTzPW1FYkRtZVvp", "https://open.spotify.com/track/3feJRCg7kdv8Cw5RyBUMF1", "https://open.spotify.com/track/4AioIdppLSMfjx1neEh2es", "https://open.spotify.com/track/17zZ7B6sseJ21Icuecmg6z", "https://open.spotify.com/track/2kLkLL2NyIyTDtFCudzafk", "https://open.spotify.com/track/1cvrq9f8JgpHI1PSugPt1z", "https://open.spotify.com/track/0tTd9ORoXsPxRjOXERvef0", "https://open.spotify.com/track/5droz4ynHzzXdhjmIe97pY", "https://open.spotify.com/track/79Oik6UH0u2mPRuLDKqkXd", "https://open.spotify.com/track/1nCiGh1JB6tw79Dq9inWvH", "https://open.spotify.com/track/6WxyysQJdEARzyzZbR490j", "https://open.spotify.com/track/3Y5UsiQQLAojyXwHVCY9M9", "https://open.spotify.com/track/0Y8h6jYIuzOusiw4cPiqIK", "https://open.spotify.com/track/4b4QTgcOotKHsH8qUF9H3M", "https://open.spotify.com/track/1qv4DQoTo6GqvZ0nNTZNFf", "https://open.spotify.com/track/1iqs0KwzWkfortdX5pGFTk", "https://open.spotify.com/track/5TBgXDDOt8bcwZ5LKWWVdU", "https://open.spotify.com/track/2iNJgTqb17WxxfrKf2iQnD", "https://open.spotify.com/track/6Kv0BffEuspSRigJLl93gy", "https://open.spotify.com/track/4E3SLKGh6SLbyUVQBTGSkI"
+            ],
+            "de_agora": [
+                "https://open.spotify.com/track/65aH3l8LEmRp3HuH5XpKoH", "https://open.spotify.com/track/6n9JMoXkXu4lDOu1k6MRpy", "https://open.spotify.com/track/03Xt1TTim0FhR5fS48DLhE", "https://open.spotify.com/track/0HixceBFegrCY3GFBB7SlQ", "https://open.spotify.com/track/2ejSYn4SfoE07mXPlnYVED", "https://open.spotify.com/track/5puMdJT0vTBEnn0k0Cnah4", "https://open.spotify.com/track/4tgLMOHoZlWRmEMclryt6T", "https://open.spotify.com/track/4SjcIkVc4cvFgURD1EHxDM", "https://open.spotify.com/track/1lokGTw8YKDexcSPtQ8AQ3", "https://open.spotify.com/track/44CTudFZ0kbaIF9n0jk7oU", "https://open.spotify.com/track/1DwscornXpj8fmOmYVlqZt", "https://open.spotify.com/track/5y2ijHECwFYWqcAHKTZgzD", "https://open.spotify.com/track/7gtG45ieyQzKtNKobfLd49", "https://open.spotify.com/track/3qhlB30KknSejmIvZZLjOD", "https://open.spotify.com/track/7yNf9YjeO5JXUE3JEBgnYc", "https://open.spotify.com/track/2lTm559tuIvatlT1u0JYG2", "https://open.spotify.com/track/55lijDD6OAjLFFUHU9tcDm", "https://open.spotify.com/track/1rIKgCH4H52lrvDcz50hS8", "https://open.spotify.com/track/6f68Ac5tt5BQOpwr0BV9oN", "https://open.spotify.com/track/6J5kc12BW5HuP3d7C3vvx8", "https://open.spotify.com/track/7BRD7x5pt8Lqa1eGYC4dzj", "https://open.spotify.com/track/2oEqioA87yAgx4HMvLtyNt", "https://open.spotify.com/track/0AWbhOimtlECEsQP0H5J6Q", "https://open.spotify.com/track/5EMdMjFDucmNsD80Y0mjEI", "https://open.spotify.com/track/2De1EHbIhepIVLHZ16bySE", "https://open.spotify.com/track/588PdhJdtsuypJdUb4ms4K", "https://open.spotify.com/track/2s4nhrlWTnmzSnGFH5pyAM", "https://open.spotify.com/track/6YAK1Sle1Wl7jOurqwWCfh", "https://open.spotify.com/track/5L0d4gFfxGNITmevcFfHnA", "https://open.spotify.com/track/5YG4rxeltvw2KmOy0dW4z9", "https://open.spotify.com/track/4jUZymsR3lkia9wkP0o9cX", "https://open.spotify.com/track/5s4j3EtFF9P0f1KkqYzcT5", "https://open.spotify.com/track/0MXuN923Y0DfRsPx2vFdzO", "https://open.spotify.com/track/0B0V6mIB9zsL5YyBsgSL02", "https://open.spotify.com/track/3Vlb046ateZv3zatIqMm5P", "https://open.spotify.com/track/2Vq7z5rYN1wZxUNg2hDNPP", "https://open.spotify.com/track/1D2PFSVzTg7Xvcz3ULwyFY", "https://open.spotify.com/track/48prukdF0AI4Q7AMOzkxnQ", "https://open.spotify.com/track/5wZ3pAozhIMrbwpioCRbDN", "https://open.spotify.com/track/5YMY8AMjlwkrgPr7J02GpQ"
+            ]
+        };
+        const nomesCategorias = { nostalgica: "Nostálgica", infinite: "INFINITE", trap: "TRAP", foco: "FOCO", mpb: "MPB", motivacao: "Motivação", de_agora: "De Agora" };
+
+        // --- AUTENTICAÇÃO ---
+        async function loginSpotify() {
+            const codeVerifier = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+            localStorage.setItem('code_verifier', codeVerifier);
+            const encoder = new TextEncoder();
+            const data = encoder.encode(codeVerifier);
+            const digest = await window.crypto.subtle.digest('SHA-256', data);
+            const codeChallenge = btoa(String.fromCharCode.apply(null, [...new Uint8Array(digest)])).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+            
+            const scopes = 'playlist-modify-public playlist-modify-private';
+            
+            // Aqui substituí a URL que estava com erro pelo endpoint oficial de autorização do Spotify
+            window.location.href = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&scope=${encodeURIComponent(scopes)}&code_challenge_method=S256&code_challenge=${codeChallenge}`;
+        }
+
+        window.onload = async () => {
+            const code = new URLSearchParams(window.location.search).get('code');
+            if (code) {
+                const codeVerifier = localStorage.getItem('code_verifier');
+                
+                // Endpoint oficial para buscar o Token
+                const response = await fetch('https://accounts.spotify.com/api/token', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams({ client_id: CLIENT_ID, grant_type: 'authorization_code', code, redirect_uri: REDIRECT_URI, code_verifier: codeVerifier })
+                });
+                const data = await response.json();
+                if (data.access_token) {
+                    accessToken = data.access_token;
+                    document.getElementById('btn-login').innerText = "🟢 Conectado";
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                }
+            }
+        };
+
+        // --- GERAÇÃO DA PLAYLIST ---
+        function gerarPlaylist() {
+            const total = parseInt(document.getElementById('total_musicas').value) || 12;
+            const pesos = {
+                nostalgica: Number(document.getElementById('perc_nostalgica').value),
+                infinite: Number(document.getElementById('perc_infinite').value),
+                trap: Number(document.getElementById('perc_trap').value),
+                foco: Number(document.getElementById('perc_foco').value),
+                mpb: Number(document.getElementById('perc_mpb').value),
+                motivacao: Number(document.getElementById('perc_motivacao').value),
+                de_agora: Number(document.getElementById('perc_de_agora').value)
+            };
+
+            let somaPesos = Object.values(pesos).reduce((a, b) => a + b, 0);
+            if (somaPesos === 0) return alert("Defina os pesos nas categorias para gerar a playlist!");
+
+            linksAtuais = [];
+            let html = "";
+            let i = 1;
+
+            for (let cat in pesos) {
+                let qtd = Math.round((pesos[cat] / somaPesos) * total);
+                let selecionadas = [...(bancoDeMusicas[cat] || [])].sort(() => 0.5 - Math.random()).slice(0, qtd);
+                selecionadas.forEach(link => {
+                    linksAtuais.push(link);
+                    html += `<div class="track-item"><span class="track-number">${i++}</span><span class="track-category">${nomesCategorias[cat]}</span><span>Música Sorteada 🎵</span></div>`;
+                });
+            }
+
+            document.getElementById('playlist-resultado').innerHTML = html;
+            document.getElementById('nome_playlist').style.display = 'block';
+            document.getElementById('btn-exportar').style.display = 'block';
+        }
+
+        // --- EXPORTAÇÃO REAL PARA O SPOTIFY ---
+        async function exportarParaSpotifyAPI() {
+            if (!accessToken) return alert("Você precisa conectar com o Spotify primeiro!");
+            const btn = document.getElementById('btn-exportar');
+            btn.innerText = "⏳ Criando playlist...";
+
+            try {
+                // 1. Pega usuário (Endpoint Oficial do Spotify)
+                const userResponse = await fetch('https://api.spotify.com/v1/me', { headers: { 'Authorization': `Bearer ${accessToken}` } });
+                const user = await userResponse.json();
+                
+                // 2. Cria playlist (Endpoint Oficial do Spotify)
+                const nome = document.getElementById('nome_playlist').value || "Mix Hiperfoco";
+                const playlistResponse = await fetch(`https://api.spotify.com/v1/users/${user.id}/playlists`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: nome, public: false })
+                });
+                const playlist = await playlistResponse.json();
+
+                // 3. Formata os IDs (Mantive a lógica robusta para extrair o ID numérico do link)
+                const uris = linksAtuais.map(link => {
+                    const id = link.includes('track/') ? link.split('track/')[1].split('?')[0] : link.split('/').pop().split('?')[0];
+                    return `spotify:track:${id}`;
+                });
+
+                if(uris.length === 0) {
+                    alert("Aviso: Nenhuma música foi adicionada.");
+                    btn.innerText = "Tentar novamente";
+                    return;
+                }
+
+                // 4. Adiciona as músicas (Endpoint Oficial do Spotify)
+                await fetch(`https://api.spotify.com/v1/playlists/${playlist.id}/tracks`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ uris })
+                });
+
+                btn.innerText = "✅ Sucesso! Clique para abrir";
+                btn.style.backgroundColor = "#1ed760";
+                
+                // Muda a função do botão para abrir o link da playlist criada
+                btn.onclick = () => window.open(playlist.external_urls.spotify, '_blank');
+
+            } catch (e) {
+                console.error(e);
+                alert("Erro ao criar a playlist. Verifique se o login não expirou.");
+                btn.innerText = "Tentar novamente";
+            }
+        }
+    </script>
+</body>
+</html>
         "https://open.spotify.com/track/6K4t31amVTZDgR3sKmwUJJ",
         "https://open.spotify.com/track/22VdIZQfgXJea34mQxlt81",
         "https://open.spotify.com/track/7fBv7CLKzipRk6EC6TWHOB",
@@ -518,4 +583,5 @@
     </script>
 </body>
 </html>
+
 
