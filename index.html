@@ -520,7 +520,7 @@
                 const playlist = await (await fetch(`${apiBase}/users/${user.id}/playlists`, {
                     method: 'POST',
                     headers: { 'Authorization': `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name: nome, public: false })
+                    body: JSON.stringify({ name: nome, public: true })
                 })).json();
 
                 const uris = linksAtuais.map(link => {
@@ -544,3 +544,4 @@
     </script>
 </body>
 </html>
+
