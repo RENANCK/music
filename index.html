@@ -64,7 +64,34 @@
         <button class="btn-gerar" onclick="gerarPlaylist()">1. Gerar Mix Perfeito</button>
         
         <input type="text" id="nome_playlist" class="input-nome-playlist" placeholder="Dê um nome para sua playlist (Ex: Sessão de Estudos)">
-        <button id="btn-exportar" class="btn-exportar" onclick="exportarParaSpotifyAPI()">2. Criar Playlist Automática no Spotify ✨</button>
+        <button id="btn-exportar" class="btn-exportar" onclick="exportarParaSpotifyAPI(// 1. Pegamos os links que foram sorteados (seja 1 ou 100)
+const urisParaAdicionar = linksAtuais.map(link => {
+    try {
+        // Remove espaços em branco
+        let urlLimpa = link.trim();
+        
+        // Extrai o ID: funciona com links tipo "open.spotify.com/track/ID" 
+        // ou apenas o link direto com parâmetros
+        let id = urlLimpa.includes('track/') 
+                 ? urlLimpa.split('track/')[1].split('?')[0] 
+                 : urlLimpa.split('/').pop().split('?')[0];
+        
+        return 'spotify:track:' + id;
+    } catch (e) {
+        console.error("Link inválido detectado:", link);
+        return null;
+    }
+}).filter(uri => uri !== null); // Remove qualquer link que deu erro
+
+// 2. Envia para o Spotify
+const addTracksResponse = await fetch(apiBase + '/playlists/' + playlistId + '/tracks', {
+    method: 'POST',
+    headers: { 
+        'Authorization': 'Bearer ' + accessToken, 
+        'Content-Type': 'application/json' 
+    },
+    body: JSON.stringify({ uris: urisParaAdicionar }) 
+});)">2. Criar Playlist Automática no Spotify ✨</button>
 
         <div id="playlist-resultado">
             <div class="empty-state">Sua playlist aparecerá aqui...</div>
@@ -175,6 +202,12 @@
             return array;
         }
 
+        <div class="input-group destaque-total">
+    <label>Total de Músicas na Playlist:</label>
+    <div class="input-wrapper">
+        <input type="number" id="total_musicas" min="1" value="12">
+    </div>
+</div>
         function calcularVagasExatas(pesos, totalVagas = 12) {
             let somaPesos = Object.values(pesos).reduce((a, b) => a + b, 0);
             if (somaPesos === 0) return null;
@@ -205,6 +238,13 @@
         }
 
         function gerarPlaylist() {
+    // Aqui ele lê o valor que você escolheu na tela
+    const quantidadeDesejada = parseInt(document.getElementById('total_musicas').value) || 12;
+
+    // Depois ele passa esse valor para a função que calcula as vagas
+    const vagas = calcularVagasExatas(pesos, quantidadeDesejada); 
+    ...
+}
             const pesos = {
                 nostalgica: Number(document.getElementById('perc_nostalgica').value),
                 infinite: Number(document.getElementById('perc_infinite').value),
