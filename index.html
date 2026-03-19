@@ -3,1574 +3,649 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mix Hiperfoco — GitHub Edition</title>
+  <title>Plano Inglês 30 Dias</title>
   <style>
-    :root{
-      --bg1:#07111f;
-      --bg2:#0b1730;
-      --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.04);
-      --border:rgba(255,255,255,.11);
-      --text:#f5f7ff;
-      --muted:#aab5d6;
-      --green:#1db954;
-      --green2:#149943;
-      --yellow:#ffb84d;
-      --red:#ff667f;
-      --blue:#7aa2ff;
-      --shadow:0 18px 50px rgba(0,0,0,.35);
+    :root {
+      --bg: #0f1115;
+      --card: #181c23;
+      --card-2: #202632;
+      --text: #f5f7fb;
+      --muted: #aeb8c9;
+      --primary: #4f8cff;
+      --primary-2: #6ba0ff;
+      --success: #2ecc71;
+      --border: rgba(255,255,255,0.08);
+      --danger: #ff5f5f;
+      --shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:Inter,Segoe UI,Tahoma,Verdana,sans-serif;
-      min-height:100vh;
-      color:var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(29,185,84,.20), transparent 22%),
-        radial-gradient(circle at top right, rgba(122,162,255,.15), transparent 18%),
-        linear-gradient(155deg, var(--bg1), var(--bg2) 55%, #091120 100%);
-      padding:24px 14px 60px;
+    * {
+      box-sizing: border-box;
     }
 
-    .app{max-width:1500px;margin:0 auto}
-    .hero,.panel{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:30px;
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(16px);
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0d1016 0%, #111622 100%);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 24px;
     }
 
-    .hero{padding:28px;margin-bottom:18px}
-    .hero h1{margin:0 0 8px;font-size:clamp(1.7rem,3vw,2.7rem)}
-    .hero p{margin:0;color:var(--muted);line-height:1.55;max-width:1100px}
-
-    .layout{
-      display:grid;
-      grid-template-columns:560px 1fr;
-      gap:18px;
-      align-items:start;
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
     }
 
-    .panel-head{
-      padding:18px 20px 10px;
-      border-bottom:1px solid rgba(255,255,255,.07);
+    .hero, .card {
+      background: rgba(24, 28, 35, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
     }
 
-    .panel-head h2{margin:0 0 6px;font-size:1.08rem}
-    .panel-head p{margin:0;color:var(--muted);font-size:.93rem}
-    .panel-body{padding:18px 20px 20px}
-
-    .card{
-      background:var(--card2);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:20px;
-      padding:14px;
+    .hero {
+      padding: 24px;
+      margin-bottom: 20px;
     }
 
-    .row{display:flex;gap:12px;flex-wrap:wrap}
-    .col{display:flex;flex-direction:column;gap:12px}
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-
-    .field{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.07);
-      border-radius:16px;
-      padding:12px;
+    h1 {
+      margin: 0 0 10px;
+      font-size: 2rem;
     }
 
-    .field.inline{
-      flex-direction:row;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
+    p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 6px;
     }
 
-    label{
-      font-size:.9rem;
-      font-weight:800;
-      color:#f2f5ff;
+    .top-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
     }
 
-    input[type="number"],input[type="text"],select{
-      width:100%;
-      border:none;
-      outline:none;
-      height:42px;
-      border-radius:12px;
-      padding:0 12px;
-      background:#0b1220;
-      color:white;
-      border:1px solid rgba(255,255,255,.12);
-      font-size:.96rem;
+    .mini-card {
+      background: var(--card-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
     }
 
-    input[type="checkbox"]{transform:scale(1.12)}
-
-    .actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
+    .mini-label {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 8px;
     }
 
-    button,.btnlink{
-      border:none;
-      cursor:pointer;
-      color:white;
-      font-weight:900;
-      padding:13px 16px;
-      border-radius:15px;
-      transition:.18s ease;
-      font-size:.93rem;
-      letter-spacing:.01em;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
+    .mini-value {
+      font-size: 1.3rem;
+      font-weight: bold;
     }
 
-    button:hover,.btnlink:hover{transform:translateY(-1px)}
-    button:disabled{opacity:.55;cursor:not-allowed;transform:none}
-
-    .btn-primary{background:linear-gradient(135deg,var(--green),var(--green2))}
-    .btn-soft{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
-    .btn-yellow{background:rgba(255,184,77,.14);border:1px solid rgba(255,184,77,.22)}
-    .btn-red{background:rgba(255,102,127,.14);border:1px solid rgba(255,102,127,.22)}
-    .btn-blue{background:rgba(122,162,255,.14);border:1px solid rgba(122,162,255,.22)}
-
-    .badge{
-      display:inline-flex;
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:.84rem;
-      font-weight:800;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.12);
-      color:#eef2ff;
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
     }
 
-    .badge.green{
-      background:rgba(29,185,84,.14);
-      border-color:rgba(29,185,84,.25);
-      color:#d7ffe4;
+    button, a.action-link {
+      border: none;
+      border-radius: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .badge.yellow{
-      background:rgba(255,184,77,.14);
-      border-color:rgba(255,184,77,.22);
-      color:#ffe8be;
+    .btn-primary {
+      background: var(--primary);
+      color: white;
     }
 
-    .status{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-bottom:14px;
+    .btn-primary:hover {
+      background: var(--primary-2);
+      transform: translateY(-1px);
     }
 
-    .status .box{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:18px;
-      padding:14px;
-      min-height:90px;
+    .btn-secondary {
+      background: #2a3240;
+      color: white;
     }
 
-    .status .k{
-      font-size:.78rem;
-      color:var(--muted);
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      margin-bottom:7px;
+    .btn-secondary:hover {
+      background: #344053;
+      transform: translateY(-1px);
     }
 
-    .status .v{font-weight:900;line-height:1.35}
-
-    .playerTop{
-      display:grid;
-      grid-template-columns:220px 1fr;
-      gap:16px;
-      margin-bottom:14px;
+    .btn-danger {
+      background: var(--danger);
+      color: white;
     }
 
-    .coverBox{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;
-      padding:12px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:220px;
+    .btn-danger:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
     }
 
-    .coverBox img{
-      width:100%;
-      max-width:196px;
-      aspect-ratio:1/1;
-      object-fit:cover;
-      border-radius:18px;
-      box-shadow:0 15px 30px rgba(0,0,0,.25);
-      background:#121212;
+    .card {
+      padding: 20px;
     }
 
-    .nowBox{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;
-      padding:16px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      gap:10px;
+    .section-title {
+      margin: 0 0 14px;
+      font-size: 1.3rem;
     }
 
-    .nowTitle{font-size:1.2rem;font-weight:900;line-height:1.25}
-    .nowArtist{color:var(--muted);font-weight:700;line-height:1.4}
-    .miniMeta{display:flex;gap:8px;flex-wrap:wrap}
-
-    .chip{
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:999px;
-      padding:7px 10px;
-      font-size:.82rem;
-      font-weight:800;
+    .day-list {
+      display: grid;
+      gap: 12px;
     }
 
-    .embedWrap{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;
-      padding:12px;
-      margin-bottom:14px;
+    .day-item {
+      background: var(--card-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 14px;
+      align-items: center;
     }
 
-    iframe.spotify{
-      width:100%;
-      height:352px;
-      border:0;
-      border-radius:16px;
-      background:#121212;
+    .day-item.today {
+      outline: 2px solid var(--primary);
     }
 
-    .queue{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      max-height:760px;
-      overflow:auto;
-      padding-right:4px;
+    .day-item.done {
+      border-color: rgba(46, 204, 113, 0.4);
+      background: rgba(46, 204, 113, 0.08);
     }
 
-    .item{
-      display:grid;
-      grid-template-columns:58px 60px 130px 1fr auto auto;
-      gap:12px;
-      align-items:center;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.07);
-      border-radius:18px;
-      padding:10px 12px;
-      cursor:pointer;
+    .checkbox {
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+      accent-color: var(--success);
     }
 
-    .item.active{
-      border-color:rgba(29,185,84,.45);
-      background:rgba(29,185,84,.08);
+    .day-info h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
     }
 
-    .n{
-      width:42px;
-      height:42px;
-      border-radius:12px;
-      display:grid;
-      place-items:center;
-      font-weight:900;
-      background:linear-gradient(135deg, rgba(29,185,84,.22), rgba(255,255,255,.08));
-      border:1px solid rgba(255,255,255,.08);
+    .day-info p {
+      margin: 0;
+      font-size: 0.92rem;
     }
 
-    .thumb{
-      width:48px;
-      height:48px;
-      border-radius:12px;
-      object-fit:cover;
-      background:#121212;
-      border:1px solid rgba(255,255,255,.08);
+    .tag {
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      white-space: nowrap;
     }
 
-    .cat{
-      justify-self:start;
-      padding:7px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,.08);
-      font-size:.8rem;
-      font-weight:800;
-      white-space:nowrap;
+    .tag.today {
+      background: rgba(79, 140, 255, 0.15);
+      color: #8db4ff;
+      border: 1px solid rgba(79, 140, 255, 0.25);
     }
 
-    .mainText{min-width:0}
-    .mainText .t{
-      font-weight:900;
-      line-height:1.35;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+    .tag.done {
+      background: rgba(46, 204, 113, 0.15);
+      color: #76e3a4;
+      border: 1px solid rgba(46, 204, 113, 0.25);
     }
 
-    .mainText .a{
-      color:var(--muted);
-      font-size:.88rem;
-      margin-top:4px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+    .tag.pending {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .openLink{
-      color:white;
-      text-decoration:none;
-      font-weight:900;
-      padding:9px 12px;
-      border-radius:12px;
-      background:rgba(29,185,84,.15);
-      border:1px solid rgba(29,185,84,.22);
+    .footer-note {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
-    .moveBtn{
-      padding:8px 10px;
-      border-radius:12px;
-      font-size:.85rem;
+    .small-link {
+      color: #9ec0ff;
+      text-decoration: none;
+      font-size: 0.9rem;
     }
 
-    .empty{
-      padding:24px;
-      text-align:center;
-      color:var(--muted);
-      border-radius:18px;
-      border:1px dashed rgba(255,255,255,.12);
-      background:rgba(255,255,255,.03);
+    .small-link:hover {
+      text-decoration: underline;
     }
 
-    .alert{
-      display:none;
-      margin-top:14px;
-      padding:14px 16px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.1);
-      background:rgba(255,255,255,.05);
-      line-height:1.5;
-    }
+    @media (max-width: 700px) {
+      .day-item {
+        grid-template-columns: auto 1fr;
+      }
 
-    .alert.show{display:block}
-    .alert.success{background:rgba(29,185,84,.12);border-color:rgba(29,185,84,.22);color:#cfffdb}
-    .alert.error{background:rgba(255,102,127,.12);border-color:rgba(255,102,127,.22);color:#ffd7df}
-    .alert.info{background:rgba(122,162,255,.12);border-color:rgba(122,162,255,.22);color:#dbe5ff}
-
-    .mono{
-      font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-      word-break:break-all;
-      font-size:.86rem;
-    }
-
-    .small{
-      font-size:.87rem;
-      color:var(--muted);
-      line-height:1.5;
-    }
-
-    .sep{
-      height:1px;
-      background:rgba(255,255,255,.08);
-      margin:6px 0;
-    }
-
-    @media (max-width:1200px){
-      .layout{grid-template-columns:1fr}
-    }
-
-    @media (max-width:860px){
-      .playerTop,.grid2,.status{grid-template-columns:1fr}
-      .item{grid-template-columns:46px 54px 1fr}
-      .cat,.mainText,.openLink,.moveWrap{grid-column:3}
-      iframe.spotify{height:232px}
+      .tag {
+        grid-column: 1 / -1;
+        width: fit-content;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="app">
+  <div class="container">
     <section class="hero">
-      <h1>Mix Hiperfoco — GitHub Edition</h1>
+      <h1>Plano de Inglês — 30 Dias</h1>
       <p>
-        Gera jam aleatória por categoria, mostra nome/artista/capa, salva playlist no Spotify,
-        exporta/importa JSON, permite reordenar a fila e melhora o uso no Android com botão para abrir a faixa no app do Spotify.
+        O sistema considera <strong>19/03/2026</strong> como o <strong>Dia 1</strong>.
+        Cada dia tem um link principal para estudo e uma checklist que pode ser marcada.
+      </p>
+
+      <div class="top-grid">
+        <div class="mini-card">
+          <div class="mini-label">Data inicial</div>
+          <div class="mini-value">19/03/2026</div>
+        </div>
+
+        <div class="mini-card">
+          <div class="mini-label">Hoje corresponde ao</div>
+          <div class="mini-value" id="currentDayText">Calculando...</div>
+        </div>
+
+        <div class="mini-card">
+          <div class="mini-label">Concluídos</div>
+          <div class="mini-value" id="doneCount">0 / 30</div>
+        </div>
+
+        <div class="mini-card">
+          <div class="mini-label">Link do dia</div>
+          <div class="mini-value" id="todayResource">Carregando...</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn-primary" id="openTodayBtn">Abrir link de hoje</button>
+        <button class="btn-secondary" id="toggleRedirectBtn">Desativar redirecionamento automático</button>
+        <button class="btn-danger" id="resetChecklistBtn">Resetar checklist</button>
+      </div>
+
+      <p class="footer-note">
+        O redirecionamento automático acontece 2 segundos após abrir a página, se estiver ativado.
       </p>
     </section>
 
-    <div class="layout">
-      <section class="panel">
-        <div class="panel-head">
-          <h2>Configurações</h2>
-          <p>No Android, o Embed pode tocar só prévia. Use “Abrir no app do Spotify” para reprodução completa.</p>
-        </div>
-
-        <div class="panel-body">
-          <div class="field inline">
-            <label for="total_musicas">Quantidade de músicas</label>
-            <input type="number" id="total_musicas" min="1" value="15" style="max-width:100px;text-align:center;font-weight:900;">
-          </div>
-
-          <div class="grid2" style="margin-top:12px;">
-            <div class="field inline"><label>Nostálgica</label><input type="number" id="perc_nostalgica" min="0" value="0" style="max-width:90px;text-align:center;"></div>
-            <div class="field inline"><label>Motivação</label><input type="number" id="perc_motivacao" min="0" value="0" style="max-width:90px;text-align:center;"></div>
-            <div class="field inline"><label>MPB</label><input type="number" id="perc_mpb" min="0" value="0" style="max-width:90px;text-align:center;"></div>
-            <div class="field inline"><label>Hip-Hop</label><input type="number" id="perc_hip_hop" min="0" value="0" style="max-width:90px;text-align:center;"></div>
-            <div class="field inline"><label>Bossa Nova</label><input type="number" id="perc_bossa_nova" min="0" value="0" style="max-width:90px;text-align:center;"></div>
-            <div class="field inline"><label>Latina</label><input type="number" id="perc_latina" min="0" value="0" style="max-width:90px;text-align:center;"></div>
-            <div class="field inline"><label>Movie</label><input type="number" id="perc_movie" min="0" value="0" style="max-width:90px;text-align:center;"></div>
-            <div class="field inline"><label>Reggae</label><input type="number" id="perc_reggae" min="0" value="0" style="max-width:90px;text-align:center;"></div>
-            <div class="field inline"><label>Aleatória</label><input type="number" id="perc_aleatoria" min="0" value="0" style="max-width:90px;text-align:center;"></div>
-          </div>
-
-          <div class="grid2" style="margin-top:12px;">
-            <div class="field"><label for="playlist_nome">Nome da playlist</label><input type="text" id="playlist_nome" value="Jam Hiperfoco GitHub"></div>
-            <div class="field"><label for="playlist_publica">Visibilidade</label><select id="playlist_publica"><option value="false" selected>Privada</option><option value="true">Pública</option></select></div>
-          </div>
-
-          <div class="grid2" style="margin-top:12px;">
-            <div class="field inline"><label for="evitar_repeticao">Evitar repetir categoria seguida</label><input type="checkbox" id="evitar_repeticao" checked></div>
-            <div class="field inline"><label for="salvar_auto">Salvar automaticamente ao gerar</label><input type="checkbox" id="salvar_auto"></div>
-          </div>
-
-          <div class="card" style="margin-top:12px;">
-            <div class="row" style="justify-content:space-between;align-items:center;">
-              <div class="col" style="gap:6px;">
-                <div class="badge" id="status-login">Spotify não conectado</div>
-                <div class="small">Redirect URI atual:</div>
-                <div class="mono" id="redirect-uri"></div>
-              </div>
-              <div class="col" style="align-items:flex-end;gap:6px;">
-                <div class="small">Playlist criada</div>
-                <a id="playlist-criada-link" class="openLink" href="#" target="_blank" rel="noopener noreferrer" style="display:none;">Abrir playlist</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" style="margin-top:12px;">
-            <div class="row" style="justify-content:space-between;align-items:center;">
-              <div class="badge yellow" id="device-badge">Detectando dispositivo…</div>
-              <a id="btn-open-current-app" class="btnlink btn-blue" href="#" style="display:none;">🎧 Abrir no app do Spotify</a>
-            </div>
-            <div class="small" id="device-tip" style="margin-top:10px;">
-              Em alguns celulares Android, o player embutido do Spotify toca só a prévia.
-            </div>
-          </div>
-
-          <div class="actions">
-            <button class="btn-primary" onclick="gerarETocar()">▶ Gerar e tocar</button>
-            <button class="btn-soft" onclick="musicaAnterior()">⏮ Anterior</button>
-            <button class="btn-soft" onclick="proximaMusica()">⏭ Próxima</button>
-            <button class="btn-soft" onclick="loginSpotify()">🔐 Entrar com Spotify</button>
-            <button class="btn-yellow" id="btnSalvarPlaylist" onclick="salvarPlaylistSpotify()" disabled>💾 Salvar playlist</button>
-            <button class="btn-red" onclick="logoutSpotify()">Sair</button>
-          </div>
-
-          <div class="actions">
-            <button class="btn-blue" onclick="exportarJam()">⬇ Exportar JSON</button>
-            <button class="btn-blue" onclick="document.getElementById('importFile').click()">⬆ Importar JSON</button>
-            <button class="btn-soft" onclick="copiarLinks()">🔗 Copiar links</button>
-            <button class="btn-soft" onclick="copiarUris()">🎵 Copiar URIs</button>
-            <button class="btn-soft" onclick="salvarJamLocal()">💽 Salvar local</button>
-            <button class="btn-soft" onclick="carregarJamLocal()">📂 Carregar local</button>
-            <button class="btn-soft" onclick="removerFaixaAtual()">🗑 Remover atual</button>
-            <button class="btn-soft" onclick="limparCampos()">Limpar</button>
-          </div>
-
-          <input type="file" id="importFile" accept=".json,application/json" style="display:none">
-          <div class="alert" id="alerta"></div>
-
-          <div class="small" style="margin-top:14px;">
-            Para GitHub Pages, publique este arquivo como <span class="mono">index.html</span>.
-          </div>
-        </div>
-      </section>
-
-      <section class="panel">
-        <div class="panel-head">
-          <h2>Player e fila</h2>
-          <p>Nome das músicas, capa, edição de posição e abertura rápida no Spotify.</p>
-        </div>
-
-        <div class="panel-body">
-          <div class="status">
-            <div class="box">
-              <div class="k">Tocando agora</div>
-              <div class="v" id="tocando-agora">Nenhuma música iniciada</div>
-            </div>
-            <div class="box">
-              <div class="k">Próxima da fila</div>
-              <div class="v" id="proxima-faixa">Nenhuma</div>
-            </div>
-          </div>
-
-          <div class="playerTop">
-            <div class="coverBox">
-              <img id="cover-atual" alt="Capa da música" src="" style="display:none;">
-              <div id="cover-vazio" class="empty" style="width:100%;">Sem capa carregada</div>
-            </div>
-
-            <div class="nowBox">
-              <div class="nowTitle" id="now-title">Nenhuma faixa carregada</div>
-              <div class="nowArtist" id="now-artist">Gere uma jam para começar</div>
-              <div class="miniMeta">
-                <div class="chip" id="chip-cat">Categoria: —</div>
-                <div class="chip" id="chip-pos">Faixa: —</div>
-                <div class="chip" id="chip-total">Fila: 0</div>
-              </div>
-              <div class="actions" style="margin-top:4px;">
-                <a id="btn-open-track" class="openLink" href="#" target="_blank" rel="noopener noreferrer" style="display:none;">Abrir faixa</a>
-                <button class="btn-soft" onclick="abrirAtualSpotifyWeb()">Abrir no navegador</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="embedWrap" id="player-wrap">
-            <div class="empty">Gere uma playlist para carregar o player.</div>
-          </div>
-
-          <div class="badge" id="total-gerado">0 músicas na fila</div>
-          <div class="sep"></div>
-
-          <div class="queue" id="playlist-resultado">
-            <div class="empty">Gere uma playlist para ver a fila aqui.</div>
-          </div>
-        </div>
-      </section>
-    </div>
+    <section class="card">
+      <h2 class="section-title">Checklist dos 30 dias</h2>
+      <div class="day-list" id="dayList"></div>
+    </section>
   </div>
 
   <script>
-    const SPOTIFY_CLIENT_ID = "3effb29e1f6f451f82533d761edee1bd";
-    const REDIRECT_URI = window.location.origin + window.location.pathname;
-    const SPOTIFY_SCOPES = ["playlist-modify-private", "playlist-modify-public", "user-read-private"];
+    // =========================
+    // CONFIGURAÇÃO
+    // =========================
+    const startDate = new Date("2026-03-19T00:00:00");
 
-    const STORAGE_KEYS = {
-      token: "spotify_token",
-      verifier: "spotify_code_verifier",
-      state: "spotify_auth_state",
-      jam: "mix_hiperfoco_jam_github",
-      createdPlaylist: "mix_hiperfoco_last_playlist_github"
-    };
-
-    const bancoDeMusicas = {
-      motivacao:["4M7bbRsVNB8iWQaX8Sbfln","2CnjdM7i26Y1kvN3lyuDOl","006pMMCuRo2TFjh8sNGSov","7MnT7msJZg3XBAS0OTfGrB","1ZdhOMWyFR8Iv9eylMGYg2","4woTEX1wYOTGDqNXuavlRC","2JLlkW8sNBoEpSCHJODPDH","3E7heceGl4ojbkWXyBiLSL","6IZvVAP7VPPnsGX6bvgkqg","6b37xrsNCWYIUphFBazqD6","2CGNAOSuO1MEFCbBRgUzjd","74tLlkN3rgVzRqQJgPfink"],
-      mpb:["5DHsGfjaxIpt0v0dPGaWdI","1dociHCC4kVIaZu4Sg9ip6","7IsUsMa9T63GIg9Uv0dUX2","290rUsOclQPPHHBACyViGT","6owwZC8gUvrBuygvOHaYXb","3eVyDZXJPJzUKkyWP6eLyc","4tPMqGhipBJsJEGLyrJMzk","2DREhftHdD8pRmNdSs6nyF","3iof6EclqePezHDibBiykI","3PavsmA9S6QA5lNmmsuOif","2GAFZG9Z7UGS1iMm4Idrnr","67UiC5PaQlxa2uVugbwjw3"],
-      nostalgica:["4kLLWz7srcuLKA7Et40PQR","2ENexcMEMsYk0rVJigVD3i","1mea3bSkSGXuIRvnydlB5b","3E7dfMvvCLUddWissuqMwr","6fNhZRFEkBfgW39W3wKARJ","7w87IxuO7BDcJ3YUqCyMTT","15JINEqzVMv3SvJTAXAKED","2Foc5Q5nqNiosCNqttzHof","3CRDbSIZ4r5MsZ0YwxuEkn","62yJjFtgkhUrXktIoSjgP2","2P4OICZRVAQcYAV2JReRfj","6i0V12jOa3mr6uu4WYhUBr"],
-      aleatoria:["7sJPbhbhua4dgo2syBBp7W","4f7phfIoOpIhSI8tIK11f6","5YVzSFvj6VB4Kq5TcUX90i","3gd0e01VmtvutsjuDQY3RI","0IXGZeoMhjR3U7GtqREa3q","4MKSO58L7FeBhYgxeJ2zyg","7tqhbajSfrz2F7E1Z75ASX","3Um9toULmYFGCpvaIPFw7l","1uvyZBs4IZYRebHIB1747m","4uNlGchuCK789YjDD0fBhV","1P57udP2cWSaV9vkVFS71C","31s1pfAuukn7r3HhCLdxZ1"],
-      hip_hop:["6JH5wCoto58vgqa61jvazc","5Y2QDfKgRS6lPkyVITN4P0","7ofEB6lVX7gWvONbKhOXf9","38NukRP5zIlRv9XlKtwuAJ","7sJPbhbhua4dgo2syBBp7W","39YsVPqKn69hm7raswGJgB","50uHG6oDyUrgj7PDaNu1XE","35df5zF0HOKz9bfNjOA7tZ","2WIg2OljTQEbja74ZGOrxQ","0aksmcRh5LIs4DAL3pfcoY","5XXRWfxxyvZ7Bhy4yHzE7g","5wTHqpJDnoGW562HQW1BmC"],
-      bossa_nova:["1AxAPXcUcH3nXXeCeG0kGV","43iIQbw5hx986dUEZbr3eN","24bOiXGnWfwged0gg0LemU","5CzhAD9QczjC4IYwmlfDPH","6sGIMrtIzQjdzNndVxe397","5UaJ4zxtCIi5WZomhoZIeq","1Hv1VTm8zeOeybub15mA2R","41P6Tnd8KIHqON0QIydx6a","1e9huqPFbteN6gBWFhKrT0","68zSzKkU28AfZvr5FkAUWT","3QKJELWORZZ7rUZDWeMWSA","2KnuaZYoGzDoHiBTNYOTXG"],
-      latina:["1xuYajTJZh8zZrPRmUaagf","5OA9HCnPMG8LUPmldbh1zC","51R2M1JgyFfRS3e6v5wCt3","3sK8wGT43QFpWrvNQsrQya","3PavsmA9S6QA5lNmmsuOif","5BudpQ0Ct9sss8c9Fqv9MJ","0mvocLIWUnT10znvIXwHGr","2lTm559tuIvatlT1u0JYG2","2vTDA7mOYWtuduCylWfiFd","2EM9zpAc7PVeoAydmbfVIL","1IIydYQ6LTzZpgLXYpNlNy","6Sq7ltF9Qa7SNFBsV5Cogx"],
-      movie:["6pWgRkpqVfxnj3WuIcJ7WP","7nxWzxIaXdYGeLRNvnueyZ","4VnDmjYCZkyeqeb0NIKqdA","41fWOLOAoyRdiN2kjvmCef","2YF90rAMJp3QCCZN6zBXOA","7wFEzF8FbofVlQS1OcbghM","6PrKZUXJPmBiobMN44yR8Y","6XJGpirOP4Bgurcvkdanxb","62Da3JOu9H9EIgmqV7DoLG","6tJFtthY0rI1x06qb8NjK0","11IXRdEjiH0KL8nh4G1j7d","7iocNjLrxPHLl8njgRlv5U"],
-      reggae:["1tqNjCuAIoG1kyBfs8DfZE","56V7KhCjxj1tQyRYbK8lkK","3b8vIZo54D5aIHjukUCYuy","0AsfpL8bzbmEyJsfbPPYnj","2u5Jzgg0h3XgXwKSv7W5NK","0x1i0F777Y9cSiJJgzxlHQ","1GKEM5KnfB07YrtTE7l6ft","0swtGFghOmkqkQaYYpIfWZ","7znOcc87gJVcN12fSKYNry","4guiihOYsq8ry9oY2Fj10X","15475SXNlwYzXcNPdhGh4L","0kvo9DVc2jEGpTmIfas8Iy"]
-    };
-
-    const nomesCategorias = {
-      nostalgica:"Nostálgica",
-      motivacao:"Motivação",
-      mpb:"MPB",
-      hip_hop:"Hip-Hop",
-      bossa_nova:"Bossa Nova",
-      latina:"Latina",
-      movie:"Movie",
-      reggae:"Reggae",
-      aleatoria:"Aleatória"
-    };
-
-    const idsCampos = [
-      "perc_nostalgica","perc_motivacao","perc_mpb","perc_hip_hop",
-      "perc_bossa_nova","perc_latina","perc_movie","perc_reggae","perc_aleatoria"
+    const plan = [
+      {
+        title: "Dia 1 — Apresentação pessoal",
+        description: "Fale nome, cidade, curso, gostos e grave sua voz.",
+        link: "https://github.com/huytd/speech",
+        resource: "huytd/speech"
+      },
+      {
+        title: "Dia 2 — Shadowing básico",
+        description: "Repita frases curtas imitando ritmo e entonação.",
+        link: "https://github.com/Dthurow/SpeechShadowing",
+        resource: "SpeechShadowing"
+      },
+      {
+        title: "Dia 3 — Pronúncia de palavras do cotidiano",
+        description: "Treine palavras como study, bus, class, coffee.",
+        link: "https://github.com/Thiagohgl/ai-pronunciation-trainer",
+        resource: "AI Pronunciation Trainer"
+      },
+      {
+        title: "Dia 4 — Rotina do dia",
+        description: "Fale sobre o que fez hoje e o que fará amanhã.",
+        link: "https://github.com/Dthurow/SpeechShadowing",
+        resource: "SpeechShadowing"
+      },
+      {
+        title: "Dia 5 — Frases úteis",
+        description: "Escolha 15 frases e adapte 5 para sua vida.",
+        link: "https://github.com/yvoronoy/awesome-english",
+        resource: "awesome-english"
+      },
+      {
+        title: "Dia 6 — Casa e bairro",
+        description: "Descreva quarto, casa e rua em inglês.",
+        link: "https://github.com/Dthurow/SpeechShadowing",
+        resource: "SpeechShadowing"
+      },
+      {
+        title: "Dia 7 — Revisão da semana",
+        description: "Regrave sua apresentação e compare com o Dia 1.",
+        link: "https://github.com/huytd/speech",
+        resource: "huytd/speech"
+      },
+      {
+        title: "Dia 8 — Quem é você?",
+        description: "Responda who are you, what do you study, why English.",
+        link: "https://github.com/huytd/speech",
+        resource: "huytd/speech"
+      },
+      {
+        title: "Dia 9 — Rotina completa",
+        description: "Fale sua rotina inteira por 2 minutos.",
+        link: "https://github.com/Dthurow/SpeechShadowing",
+        resource: "SpeechShadowing"
+      },
+      {
+        title: "Dia 10 — Lugares",
+        description: "Pratique palavras como room, street, bus stop, university.",
+        link: "https://github.com/Thiagohgl/ai-pronunciation-trainer",
+        resource: "AI Pronunciation Trainer"
+      },
+      {
+        title: "Dia 11 — Gostos e preferências",
+        description: "Fale sobre música, séries, comida e estudos.",
+        link: "https://github.com/huytd/speech",
+        resource: "huytd/speech"
+      },
+      {
+        title: "Dia 12 — Perguntas e respostas",
+        description: "Responda perguntas básicas sem olhar.",
+        link: "https://github.com/yvoronoy/awesome-english",
+        resource: "awesome-english"
+      },
+      {
+        title: "Dia 13 — Shadowing maior",
+        description: "Frases maiores, menos pausas, mais naturalidade.",
+        link: "https://github.com/Dthurow/SpeechShadowing",
+        resource: "SpeechShadowing"
+      },
+      {
+        title: "Dia 14 — Revisão semanal",
+        description: "Grave 3 minutos sobre você, rotina e objetivos.",
+        link: "https://github.com/huytd/speech",
+        resource: "huytd/speech"
+      },
+      {
+        title: "Dia 15 — Transporte e rua",
+        description: "Pratique perguntas como how can I get there.",
+        link: "https://github.com/yvoronoy/awesome-english",
+        resource: "awesome-english"
+      },
+      {
+        title: "Dia 16 — Faculdade ou trabalho",
+        description: "Explique seu curso ou função em inglês.",
+        link: "https://github.com/Thiagohgl/ai-pronunciation-trainer",
+        resource: "AI Pronunciation Trainer"
+      },
+      {
+        title: "Dia 17 — Compras e comida",
+        description: "Monte roleplays simples para comprar e pedir comida.",
+        link: "https://github.com/yvoronoy/awesome-english",
+        resource: "awesome-english"
+      },
+      {
+        title: "Dia 18 — Falar do que comeu",
+        description: "Shadowing com foco em blocos de som.",
+        link: "https://github.com/Dthurow/SpeechShadowing",
+        resource: "SpeechShadowing"
+      },
+      {
+        title: "Dia 19 — Opiniões e sentimentos",
+        description: "Use frases com I think, I feel, in my opinion.",
+        link: "https://github.com/huytd/speech",
+        resource: "huytd/speech"
+      },
+      {
+        title: "Dia 20 — Revisão de erros",
+        description: "Pegue palavras difíceis e repita até clarear.",
+        link: "https://github.com/Thiagohgl/ai-pronunciation-trainer",
+        resource: "AI Pronunciation Trainer"
+      },
+      {
+        title: "Dia 21 — Revisão geral",
+        description: "Grave 3 minutos sobre sua semana e evolução.",
+        link: "https://github.com/huytd/speech",
+        resource: "huytd/speech"
+      },
+      {
+        title: "Dia 22 — Planos",
+        description: "Fale sobre seus próximos 7 dias.",
+        link: "https://github.com/huytd/speech",
+        resource: "huytd/speech"
+      },
+      {
+        title: "Dia 23 — Shadowing intenso",
+        description: "Repita 15 a 20 minutos e depois sem áudio.",
+        link: "https://github.com/Dthurow/SpeechShadowing",
+        resource: "SpeechShadowing"
+      },
+      {
+        title: "Dia 24 — Descrever pessoas e lugares",
+        description: "Descreva seu quarto, faculdade ou bairro.",
+        link: "https://github.com/yvoronoy/awesome-english",
+        resource: "awesome-english"
+      },
+      {
+        title: "Dia 25 — Explicar processos",
+        description: "Explique como estuda, vai de ônibus ou organiza o dia.",
+        link: "https://github.com/huytd/speech",
+        resource: "huytd/speech"
+      },
+      {
+        title: "Dia 26 — Revisão de pronúncia",
+        description: "Treine 20 palavras difíceis do mês.",
+        link: "https://github.com/Thiagohgl/ai-pronunciation-trainer",
+        resource: "AI Pronunciation Trainer"
+      },
+      {
+        title: "Dia 27 — Simulação de conversa",
+        description: "Responda perguntas como Tell me about yourself.",
+        link: "https://github.com/yvoronoy/awesome-english",
+        resource: "awesome-english"
+      },
+      {
+        title: "Dia 28 — Shadowing final",
+        description: "Foco em soar mais natural e automático.",
+        link: "https://github.com/Dthurow/SpeechShadowing",
+        resource: "SpeechShadowing"
+      },
+      {
+        title: "Dia 29 — Monólogo longo",
+        description: "Grave 4 minutos sobre vida, rotina e metas.",
+        link: "https://github.com/huytd/speech",
+        resource: "huytd/speech"
+      },
+      {
+        title: "Dia 30 — Teste final",
+        description: "Refaça a gravação do Dia 1 e compare sua evolução.",
+        link: "https://github.com/huytd/speech",
+        resource: "huytd/speech"
+      }
     ];
 
-    let playlistAtual = [];
-    let indiceAtual = 0;
-    let spotifyUser = null;
-    let ultimaPlaylistCriada = null;
+    const STORAGE_CHECKLIST = "english30_checklist_v1";
+    const STORAGE_REDIRECT = "english30_redirect_enabled_v1";
 
-    const trackMetaCache = new Map();
-    const qs = id => document.getElementById(id);
-    const isAndroid = /Android/i.test(navigator.userAgent);
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-    function showAlert(msg, tipo="info"){
-      const el = qs("alerta");
-      el.className = `alert show ${tipo}`;
-      el.innerHTML = msg;
+    // =========================
+    // FUNÇÕES
+    // =========================
+    function getTodayWithoutTime() {
+      const now = new Date();
+      return new Date(now.getFullYear(), now.getMonth(), now.getDate());
     }
 
-    function hideAlert(){
-      const el = qs("alerta");
-      el.className = "alert";
-      el.innerHTML = "";
+    function getDayNumber() {
+      const today = getTodayWithoutTime();
+      const diffMs = today - startDate;
+      const dayDiff = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+      return dayDiff + 1;
     }
 
-    function escapeHtml(s=""){
-      return String(s)
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
+    function clampDay(day) {
+      if (day < 1) return 1;
+      if (day > 30) return 30;
+      return day;
     }
 
-    function saveJSON(k,v){ localStorage.setItem(k, JSON.stringify(v)); }
-    function loadJSON(k){
-      const raw = localStorage.getItem(k);
-      if(!raw) return null;
-      try { return JSON.parse(raw); } catch { return null; }
-    }
-    function removeJSON(k){ localStorage.removeItem(k); }
-
-    function trackUrl(id){ return `https://open.spotify.com/track/${id}`; }
-    function trackUri(id){ return `spotify:track:${id}`; }
-    function embedUrl(id){ return `https://open.spotify.com/embed/track/${id}?utm_source=generator`; }
-
-    function pad2(n){ return String(n).padStart(2,"0"); }
-
-    function defaultPlaylistName(){
-      const d = new Date();
-      return `Jam Hiperfoco GitHub ${pad2(d.getDate())}/${pad2(d.getMonth()+1)}/${d.getFullYear()} ${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
-    }
-
-    function updateDeviceInfo(){
-      const b = qs("device-badge");
-      const t = qs("device-tip");
-
-      if(isAndroid){
-        b.textContent = "Android detectado";
-        b.className = "badge yellow";
-        t.textContent = "No Android, use o botão “Abrir no app do Spotify” para ouvir a faixa inteira quando o Embed tocar só a prévia.";
-      } else if(isMobile){
-        b.textContent = "Celular detectado";
-        b.className = "badge yellow";
-        t.textContent = "Em celulares, o Embed pode variar. Se o player não tocar completo, abra a faixa no Spotify.";
-      } else {
-        b.textContent = "Desktop detectado";
-        b.className = "badge green";
-        t.textContent = "No computador, o Embed costuma funcionar melhor.";
-      }
-    }
-
-    function updateRedirectInfo(){
-      qs("redirect-uri").textContent = REDIRECT_URI;
-    }
-
-    function updateCreatedPlaylistLink(){
-      const l = qs("playlist-criada-link");
-      if(ultimaPlaylistCriada?.url){
-        l.href = ultimaPlaylistCriada.url;
-        l.style.display = "inline-flex";
-      } else {
-        l.style.display = "none";
-        l.href = "#";
-      }
-    }
-
-    function updateCurrentAppButton(){
-      const b = qs("btn-open-current-app");
-      if(!playlistAtual.length){
-        b.style.display = "none";
-        b.href = "#";
-        return;
-      }
-      b.href = trackUri(playlistAtual[indiceAtual].id);
-      b.style.display = "inline-flex";
-    }
-
-    function updateLoginUI(){
-      const b = qs("status-login");
-      const s = qs("btnSalvarPlaylist");
-
-      if(spotifyUser){
-        b.textContent = `Conectado como ${spotifyUser.display_name || spotifyUser.id}`;
-        b.className = "badge green";
-      } else {
-        b.textContent = "Spotify não conectado";
-        b.className = "badge";
-      }
-
-      s.disabled = !spotifyUser || !playlistAtual.length;
-      qs("chip-total").textContent = `Fila: ${playlistAtual.length || 0}`;
-    }
-
-    function lerPesosDosInputs(){
-      return {
-        nostalgica:Number(qs("perc_nostalgica").value),
-        motivacao:Number(qs("perc_motivacao").value),
-        mpb:Number(qs("perc_mpb").value),
-        hip_hop:Number(qs("perc_hip_hop").value),
-        bossa_nova:Number(qs("perc_bossa_nova").value),
-        latina:Number(qs("perc_latina").value),
-        movie:Number(qs("perc_movie").value),
-        reggae:Number(qs("perc_reggae").value),
-        aleatoria:Number(qs("perc_aleatoria").value)
-      };
-    }
-
-    function embaralhar(lista){
-      const arr = [...lista];
-      for(let i = arr.length - 1; i > 0; i--){
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-      return arr;
-    }
-
-    function calcularVagasExatas(pesos, total){
-      const soma = Object.values(pesos).reduce((a,b)=>a+b,0);
-      if(soma === 0) return null;
-
-      const base = {};
-      const restos = [];
-
-      for(const c in pesos){
-        const ex = (pesos[c] / soma) * total;
-        base[c] = Math.floor(ex);
-        restos.push({ cat:c, resto: ex - base[c] });
-      }
-
-      const usados = Object.values(base).reduce((a,b)=>a+b,0);
-      restos.sort((a,b)=>b.resto-a.resto);
-
-      for(let i=0; i<total-usados; i++){
-        base[restos[i].cat]++;
-      }
-
-      return base;
-    }
-
-    function montarPoolPorCategoria(vagas){
-      const pool = {};
-      for(const c in vagas){
-        const q = vagas[c];
-        if(!q) continue;
-
-        const lista = bancoDeMusicas[c] || [];
-        if(!lista.length) continue;
-
-        const mist = embaralhar(lista);
-        pool[c] = [];
-
-        for(let i=0; i<q; i++){
-          pool[c].push(mist[i % mist.length]);
-        }
-
-        pool[c] = embaralhar(pool[c]);
-      }
-      return pool;
-    }
-
-    function escolherCategoria(pool, ultima, evitar){
-      const disponiveis = Object.keys(pool).filter(c => pool[c].length > 0);
-      if(!disponiveis.length) return null;
-
-      let base = disponiveis;
-
-      if(evitar){
-        const filtradas = disponiveis.filter(c => c !== ultima);
-        if(filtradas.length) base = filtradas;
-      }
-
-      base.sort((a,b)=>pool[b].length - pool[a].length);
-      const top = pool[base[0]].length;
-      const emp = base.filter(c => pool[c].length === top);
-      return emp[Math.floor(Math.random() * emp.length)];
-    }
-
-    function intercalarPlaylist(pool, total, evitar=true){
-      const out = [];
-      let ultima = null;
-
-      while(out.length < total){
-        const c = escolherCategoria(pool, ultima, evitar);
-        if(!c) break;
-
-        const id = pool[c].shift();
-        out.push({
-          catKey:c,
-          cat:nomesCategorias[c],
-          id,
-          titulo:`Track ${id}`,
-          artistas:"Carregando...",
-          cover:""
-        });
-
-        ultima = c;
-      }
-
-      return out;
-    }
-
-    async function gerarETocar(){
-      hideAlert();
-
-      const total = parseInt(qs("total_musicas").value) || 15;
-      const pesos = lerPesosDosInputs();
-      const vagas = calcularVagasExatas(pesos, total);
-      const evitar = qs("evitar_repeticao").checked;
-      const auto = qs("salvar_auto").checked;
-
-      if(!vagas){
-        showAlert("Escolha pelo menos uma categoria com valor maior que zero.", "error");
-        return;
-      }
-
-      playlistAtual = intercalarPlaylist(montarPoolPorCategoria(vagas), total, evitar);
-      indiceAtual = 0;
-
-      if(!playlistAtual.length){
-        showAlert("Não foi possível montar a jam com os dados atuais.", "error");
-        return;
-      }
-
-      if(!qs("playlist_nome").value.trim()){
-        qs("playlist_nome").value = defaultPlaylistName();
-      }
-
-      await preencherMetadataFaixas(playlistAtual);
-      updateAllUI();
-      salvarJamLocalSilencioso();
-
-      showAlert(
-        isAndroid
-          ? "Jam gerada. No Android, se tocar só prévia, use o botão para abrir no app do Spotify."
-          : "Jam gerada com sucesso.",
-        "success"
-      );
-
-      if(auto){
-        if(!spotifyUser){
-          showAlert("Jam gerada. Para salvar automaticamente, faça login com Spotify primeiro.", "info");
-        } else {
-          await salvarPlaylistSpotify(true);
-        }
-      }
-    }
-
-    function tocarIndice(i){
-      if(i < 0 || i >= playlistAtual.length) return;
-      indiceAtual = i;
-      updateAllUI();
-
-      const el = qs(`track-${i}`);
-      if(el) el.scrollIntoView({ block:"nearest", behavior:"smooth" });
-
-      salvarJamLocalSilencioso();
-    }
-
-    function proximaMusica(){
-      if(playlistAtual.length && indiceAtual < playlistAtual.length - 1){
-        tocarIndice(indiceAtual + 1);
-      }
-    }
-
-    function musicaAnterior(){
-      if(playlistAtual.length && indiceAtual > 0){
-        tocarIndice(indiceAtual - 1);
-      }
-    }
-
-    function abrirAtualSpotifyWeb(){
-      if(playlistAtual.length){
-        window.open(trackUrl(playlistAtual[indiceAtual].id), "_blank", "noopener,noreferrer");
-      }
-    }
-
-    function moverFaixa(i, dir){
-      const j = i + dir;
-      if(i < 0 || j < 0 || i >= playlistAtual.length || j >= playlistAtual.length) return;
-
-      [playlistAtual[i], playlistAtual[j]] = [playlistAtual[j], playlistAtual[i]];
-
-      if(indiceAtual === i) indiceAtual = j;
-      else if(indiceAtual === j) indiceAtual = i;
-
-      updateAllUI();
-      salvarJamLocalSilencioso();
-    }
-
-    function removerFaixa(i){
-      if(i < 0 || i >= playlistAtual.length) return;
-
-      playlistAtual.splice(i, 1);
-
-      if(indiceAtual >= playlistAtual.length){
-        indiceAtual = Math.max(playlistAtual.length - 1, 0);
-      }
-
-      updateAllUI();
-      salvarJamLocalSilencioso();
-      showAlert("Faixa removida da fila.", "success");
-    }
-
-    function removerFaixaAtual(){
-      if(playlistAtual.length) removerFaixa(indiceAtual);
-    }
-
-    function renderPlayer(){
-      const w = qs("player-wrap");
-
-      if(!playlistAtual.length){
-        w.innerHTML = '<div class="empty">Gere uma playlist para carregar o player.</div>';
-        return;
-      }
-
-      w.innerHTML = `<iframe class="spotify" src="${embedUrl(playlistAtual[indiceAtual].id)}" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
-    }
-
-    function renderCurrentInfo(){
-      const a = playlistAtual[indiceAtual];
-      const p = playlistAtual[indiceAtual + 1];
-
-      if(!a){
-        qs("tocando-agora").textContent = "Nenhuma música iniciada";
-        qs("proxima-faixa").textContent = "Nenhuma";
-        qs("now-title").textContent = "Nenhuma faixa carregada";
-        qs("now-artist").textContent = "Gere uma jam para começar";
-        qs("chip-cat").textContent = "Categoria: —";
-        qs("chip-pos").textContent = "Faixa: —";
-        qs("chip-total").textContent = "Fila: 0";
-        qs("btn-open-track").style.display = "none";
-        qs("cover-atual").style.display = "none";
-        qs("cover-vazio").style.display = "block";
-        qs("cover-atual").src = "";
-        updateCurrentAppButton();
-        return;
-      }
-
-      qs("tocando-agora").textContent = `${a.cat} • ${a.titulo}`;
-      qs("proxima-faixa").textContent = p ? `${p.cat} • ${p.titulo}` : "Fim da fila";
-      qs("now-title").textContent = a.titulo;
-      qs("now-artist").textContent = a.artistas || "Sem artista";
-      qs("chip-cat").textContent = `Categoria: ${a.cat}`;
-      qs("chip-pos").textContent = `Faixa: ${indiceAtual + 1}`;
-      qs("chip-total").textContent = `Fila: ${playlistAtual.length}`;
-
-      const o = qs("btn-open-track");
-      o.href = trackUrl(a.id);
-      o.style.display = "inline-flex";
-
-      if(a.cover){
-        qs("cover-atual").src = a.cover;
-        qs("cover-atual").style.display = "block";
-        qs("cover-vazio").style.display = "none";
-      } else {
-        qs("cover-atual").src = "";
-        qs("cover-atual").style.display = "none";
-        qs("cover-vazio").style.display = "block";
-      }
-
-      updateCurrentAppButton();
-    }
-
-    function renderQueue(){
-      const b = qs("playlist-resultado");
-      qs("total-gerado").textContent = `${playlistAtual.length} música${playlistAtual.length > 1 ? "s" : ""} na fila`;
-
-      if(!playlistAtual.length){
-        b.innerHTML = '<div class="empty">Gere uma playlist para ver a fila aqui.</div>';
-        return;
-      }
-
-      b.innerHTML = playlistAtual.map((t, i) => `
-        <div class="item ${i===indiceAtual ? "active" : ""}" id="track-${i}" onclick="tocarIndice(${i})">
-          <div class="n">${i+1}</div>
-          <img class="thumb" src="${t.cover || ""}" alt="" onerror="this.style.visibility='hidden'">
-          <div class="cat">${escapeHtml(t.cat)}</div>
-          <div class="mainText">
-            <div class="t">${escapeHtml(t.titulo || t.id)}</div>
-            <div class="a">${escapeHtml(t.artistas || t.id)}</div>
-          </div>
-          <a class="openLink" href="${trackUrl(t.id)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Abrir</a>
-          <div class="moveWrap" style="display:flex;gap:6px" onclick="event.stopPropagation()">
-            <button class="btn-soft moveBtn" onclick="moverFaixa(${i},-1)">↑</button>
-            <button class="btn-soft moveBtn" onclick="moverFaixa(${i},1)">↓</button>
-            <button class="btn-red moveBtn" onclick="removerFaixa(${i})">✕</button>
-          </div>
-        </div>
-      `).join("");
-    }
-
-    function updateAllUI(){
-      renderCurrentInfo();
-      renderPlayer();
-      renderQueue();
-      updateLoginUI();
-      updateCreatedPlaylistLink();
-      updateCurrentAppButton();
-    }
-
-    function limparCampos(){
-      qs("total_musicas").value = 15;
-      qs("playlist_nome").value = "Jam Hiperfoco GitHub";
-      qs("playlist_publica").value = "false";
-      qs("evitar_repeticao").checked = true;
-      qs("salvar_auto").checked = false;
-
-      idsCampos.forEach(id => qs(id).value = 0);
-
-      playlistAtual = [];
-      indiceAtual = 0;
-      ultimaPlaylistCriada = null;
-
-      removeJSON(STORAGE_KEYS.jam);
-      removeJSON(STORAGE_KEYS.createdPlaylist);
-
-      hideAlert();
-      updateAllUI();
-    }
-
-    async function preencherMetadataFaixas(playlist){
-      const ids = [...new Set(playlist.map(t => t.id).filter(Boolean))];
-      const falt = ids.filter(id => !trackMetaCache.has(id));
-
-      if(falt.length){
-        try{
-          const token = await tryGetAccessTokenSilencioso();
-
-          if(token){
-            for(let i=0; i<falt.length; i+=50){
-              const lote = falt.slice(i, i+50);
-              const resp = await fetch(`https://api.spotify.com/v1/tracks?ids=${lote.join(",")}`, {
-                headers:{ Authorization:`Bearer ${token}` }
-              });
-
-              if(!resp.ok) break;
-
-              const data = await resp.json();
-              (data.tracks || []).forEach(track => {
-                if(!track || !track.id) return;
-                trackMetaCache.set(track.id, {
-                  titulo: track.name || `Track ${track.id}`,
-                  artistas: (track.artists || []).map(a => a.name).join(", "),
-                  cover: track.album?.images?.[0]?.url || track.album?.images?.[1]?.url || ""
-                });
-              });
-            }
-          }
-        } catch(err){
-          console.warn("Falha ao buscar metadata:", err);
-        }
-      }
-
-      playlist.forEach(item => {
-        const m = trackMetaCache.get(item.id);
-        if(m){
-          item.titulo = m.titulo;
-          item.artistas = m.artistas;
-          item.cover = m.cover;
-        } else {
-          item.titulo = `Track ${item.id}`;
-          item.artistas = "Faça login para carregar nome e artista";
-          item.cover = "";
-        }
-      });
-    }
-
-    function base64UrlEncode(buffer){
-      return btoa(String.fromCharCode(...new Uint8Array(buffer)))
-        .replace(/\+/g,"-")
-        .replace(/\//g,"_")
-        .replace(/=+$/,"");
-    }
-
-    async function sha256(text){
-      return await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
-    }
-
-    function randomString(length=64){
-      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-      const values = crypto.getRandomValues(new Uint8Array(length));
-      let out = "";
-      for(const v of values) out += chars[v % chars.length];
-      return out;
-    }
-
-    async function loginSpotify(){
-      hideAlert();
-
-      if(!window.isSecureContext && location.hostname !== "localhost" && location.hostname !== "127.0.0.1"){
-        showAlert("Abra em HTTPS, localhost ou 127.0.0.1 para usar o login com PKCE.", "error");
-        return;
-      }
-
-      const verifier = randomString(96);
-      const state = randomString(24);
-      const challenge = base64UrlEncode(await sha256(verifier));
-
-      saveJSON(STORAGE_KEYS.verifier, verifier);
-      saveJSON(STORAGE_KEYS.state, state);
-
-      const params = new URLSearchParams({
-        client_id:SPOTIFY_CLIENT_ID,
-        response_type:"code",
-        redirect_uri:REDIRECT_URI,
-        code_challenge_method:"S256",
-        code_challenge:challenge,
-        state,
-        scope:SPOTIFY_SCOPES.join(" ")
-      });
-
-      window.location.href = `https://accounts.spotify.com/authorize?${params.toString()}`;
-    }
-
-    async function tratarCallbackSpotify(){
-      const url = new URL(window.location.href);
-      const code = url.searchParams.get("code");
-      const state = url.searchParams.get("state");
-      const error = url.searchParams.get("error");
-
-      if(error){
-        showAlert(`Spotify retornou erro: ${escapeHtml(error)}`, "error");
-        limparQuery();
-        return;
-      }
-
-      if(!code) return;
-
-      const verifier = loadJSON(STORAGE_KEYS.verifier);
-      const savedState = loadJSON(STORAGE_KEYS.state);
-
-      if(!verifier || !savedState || savedState !== state){
-        showAlert("Falha de segurança no retorno do Spotify. Tente login novamente.", "error");
-        limparQuery();
-        return;
-      }
-
-      try{
-        const body = new URLSearchParams({
-          client_id:SPOTIFY_CLIENT_ID,
-          grant_type:"authorization_code",
-          code,
-          redirect_uri:REDIRECT_URI,
-          code_verifier:verifier
-        });
-
-        const resp = await fetch("https://accounts.spotify.com/api/token", {
-          method:"POST",
-          headers:{ "Content-Type":"application/x-www-form-urlencoded" },
-          body
-        });
-
-        const data = await resp.json();
-
-        if(!resp.ok){
-          throw new Error(data.error_description || data.error || "Falha ao trocar code por token.");
-        }
-
-        saveJSON(STORAGE_KEYS.token, {
-          access_token:data.access_token,
-          refresh_token:data.refresh_token,
-          token_type:data.token_type,
-          scope:data.scope,
-          expires_at:Date.now() + data.expires_in * 1000 - 15000
-        });
-
-        removeJSON(STORAGE_KEYS.verifier);
-        removeJSON(STORAGE_KEYS.state);
-        limparQuery();
-
-        await carregarUsuarioSpotify();
-
-        if(playlistAtual.length){
-          await preencherMetadataFaixas(playlistAtual);
-          updateAllUI();
-        }
-
-        showAlert("Login com Spotify realizado com sucesso.", "success");
-      } catch(err){
-        console.error(err);
-        showAlert(`Falha no login: ${escapeHtml(err.message || String(err))}`, "error");
-      }
-    }
-
-    function limparQuery(){
-      history.replaceState({}, document.title, window.location.origin + window.location.pathname);
-    }
-
-    async function getAccessToken(){
-      const t = loadJSON(STORAGE_KEYS.token);
-      if(!t) throw new Error("Você precisa entrar com Spotify primeiro.");
-
-      if(Date.now() < t.expires_at) return t.access_token;
-      if(!t.refresh_token) throw new Error("Sessão expirada. Faça login novamente.");
-
-      const body = new URLSearchParams({
-        client_id:SPOTIFY_CLIENT_ID,
-        grant_type:"refresh_token",
-        refresh_token:t.refresh_token
-      });
-
-      const resp = await fetch("https://accounts.spotify.com/api/token", {
-        method:"POST",
-        headers:{ "Content-Type":"application/x-www-form-urlencoded" },
-        body
-      });
-
-      const data = await resp.json();
-
-      if(!resp.ok){
-        throw new Error(data.error_description || data.error || "Falha ao renovar token.");
-      }
-
-      const novo = {
-        ...t,
-        access_token:data.access_token,
-        expires_at:Date.now() + data.expires_in * 1000 - 15000
-      };
-
-      if(data.refresh_token) novo.refresh_token = data.refresh_token;
-
-      saveJSON(STORAGE_KEYS.token, novo);
-      return novo.access_token;
-    }
-
-    async function tryGetAccessTokenSilencioso(){
-      try{
-        const t = loadJSON(STORAGE_KEYS.token);
-        if(!t) return null;
-        return await getAccessToken();
+    function loadChecklist() {
+      const raw = localStorage.getItem(STORAGE_CHECKLIST);
+      if (!raw) return Array(30).fill(false);
+
+      try {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed) && parsed.length === 30) return parsed;
+        return Array(30).fill(false);
       } catch {
-        return null;
+        return Array(30).fill(false);
       }
     }
 
-    async function carregarUsuarioSpotify(){
-      try{
-        const token = await getAccessToken();
-        const resp = await fetch("https://api.spotify.com/v1/me", {
-          headers:{ Authorization:`Bearer ${token}` }
+    function saveChecklist(data) {
+      localStorage.setItem(STORAGE_CHECKLIST, JSON.stringify(data));
+    }
+
+    function isRedirectEnabled() {
+      const value = localStorage.getItem(STORAGE_REDIRECT);
+      if (value === null) return true;
+      return value === "true";
+    }
+
+    function setRedirectEnabled(value) {
+      localStorage.setItem(STORAGE_REDIRECT, String(value));
+    }
+
+    function updateHeaderInfo(checklist, currentDay) {
+      document.getElementById("currentDayText").textContent = `Dia ${currentDay}`;
+      document.getElementById("doneCount").textContent =
+        `${checklist.filter(Boolean).length} / 30`;
+
+      const todayPlan = plan[currentDay - 1];
+      document.getElementById("todayResource").textContent = todayPlan.resource;
+
+      const toggleBtn = document.getElementById("toggleRedirectBtn");
+      toggleBtn.textContent = isRedirectEnabled()
+        ? "Desativar redirecionamento automático"
+        : "Ativar redirecionamento automático";
+    }
+
+    function renderChecklist() {
+      const dayList = document.getElementById("dayList");
+      const checklist = loadChecklist();
+      const currentDayRaw = getDayNumber();
+      const currentDay = clampDay(currentDayRaw);
+
+      dayList.innerHTML = "";
+
+      plan.forEach((item, index) => {
+        const day = index + 1;
+        const isDone = checklist[index];
+        const isToday = day === currentDay;
+
+        const row = document.createElement("div");
+        row.className = "day-item";
+        if (isToday) row.classList.add("today");
+        if (isDone) row.classList.add("done");
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "checkbox";
+        checkbox.checked = isDone;
+
+        checkbox.addEventListener("change", () => {
+          const updated = loadChecklist();
+          updated[index] = checkbox.checked;
+          saveChecklist(updated);
+          renderChecklist();
         });
 
-        if(!resp.ok) throw new Error("Falha ao buscar usuário.");
-        spotifyUser = await resp.json();
-      } catch(err){
-        console.warn(err);
-        spotifyUser = null;
-      }
+        const info = document.createElement("div");
+        info.className = "day-info";
+        info.innerHTML = `
+          <h3>${item.title}</h3>
+          <p>${item.description}</p>
+          <p style="margin-top:8px;">
+            <a class="small-link" href="${item.link}" target="_blank" rel="noopener noreferrer">
+              Abrir recurso
+            </a>
+          </p>
+        `;
 
-      updateLoginUI();
-    }
+        const tag = document.createElement("div");
+        tag.className = "tag";
+        if (isToday) {
+          tag.classList.add("today");
+          tag.textContent = "Hoje";
+        } else if (isDone) {
+          tag.classList.add("done");
+          tag.textContent = "Concluído";
+        } else {
+          tag.classList.add("pending");
+          tag.textContent = "Pendente";
+        }
 
-    function logoutSpotify(){
-      removeJSON(STORAGE_KEYS.token);
-      removeJSON(STORAGE_KEYS.verifier);
-      removeJSON(STORAGE_KEYS.state);
-      spotifyUser = null;
-      updateLoginUI();
-      showAlert("Sessão Spotify removida neste navegador.", "info");
-    }
+        row.appendChild(checkbox);
+        row.appendChild(info);
+        row.appendChild(tag);
 
-    async function spotifyFetch(url, options={}){
-      const token = await getAccessToken();
-      const headers = {
-        ...(options.headers || {}),
-        Authorization:`Bearer ${token}`
-      };
-
-      const resp = await fetch(url, { ...options, headers });
-      if(resp.status === 204) return null;
-
-      const text = await resp.text();
-      let data = null;
-
-      if(text){
-        try { data = JSON.parse(text); }
-        catch { data = text; }
-      }
-
-      if(!resp.ok){
-        const msg = (data && data.error && data.error.message) || (data && data.error_description) || `Erro HTTP ${resp.status}`;
-        throw new Error(msg);
-      }
-
-      return data;
-    }
-
-    function chunk(arr, size){
-      const out = [];
-      for(let i=0; i<arr.length; i+=size){
-        out.push(arr.slice(i, i+size));
-      }
-      return out;
-    }
-
-    async function criarPlaylistUsuario(userId, nome, publica, descricao){
-      return await spotifyFetch(`https://api.spotify.com/v1/users/${encodeURIComponent(userId)}/playlists`, {
-        method:"POST",
-        headers:{ "Content-Type":"application/json" },
-        body:JSON.stringify({ name:nome, public:publica, description:descricao })
+        dayList.appendChild(row);
       });
+
+      updateHeaderInfo(checklist, currentDay);
     }
 
-    async function adicionarFaixas(playlistId, uris){
-      for(const lote of chunk(uris, 100)){
-        await spotifyFetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
-          method:"POST",
-          headers:{ "Content-Type":"application/json" },
-          body:JSON.stringify({ uris:lote })
-        });
-      }
+    function openTodayLink() {
+      const currentDay = clampDay(getDayNumber());
+      const todayPlan = plan[currentDay - 1];
+      window.open(todayPlan.link, "_blank");
     }
 
-    function descricaoPlaylist(){
-      return `Playlist criada pelo Mix Hiperfoco GitHub em ${new Date().toLocaleString("pt-BR")}.`;
+    function autoRedirectToday() {
+      if (!isRedirectEnabled()) return;
+      const currentDay = clampDay(getDayNumber());
+      const todayPlan = plan[currentDay - 1];
+
+      setTimeout(() => {
+        window.location.href = todayPlan.link;
+      }, 2000);
     }
 
-    async function salvarPlaylistSpotify(silencioso=false){
-      hideAlert();
+    // =========================
+    // EVENTOS
+    // =========================
+    document.getElementById("openTodayBtn").addEventListener("click", openTodayLink);
 
-      if(!playlistAtual.length){
-        showAlert("Gere a jam antes de salvar.", "error");
-        return;
+    document.getElementById("toggleRedirectBtn").addEventListener("click", () => {
+      setRedirectEnabled(!isRedirectEnabled());
+      renderChecklist();
+    });
+
+    document.getElementById("resetChecklistBtn").addEventListener("click", () => {
+      if (confirm("Tem certeza que deseja resetar toda a checklist?")) {
+        localStorage.removeItem(STORAGE_CHECKLIST);
+        renderChecklist();
       }
+    });
 
-      if(!spotifyUser){
-        showAlert("Entre com Spotify antes de salvar a playlist.", "error");
-        return;
-      }
-
-      const nome = qs("playlist_nome").value.trim() || defaultPlaylistName();
-      const publica = qs("playlist_publica").value === "true";
-
-      try{
-        qs("btnSalvarPlaylist").disabled = true;
-
-        if(!silencioso){
-          showAlert("Criando playlist no Spotify...", "info");
-        }
-
-        const pl = await criarPlaylistUsuario(spotifyUser.id, nome, publica, descricaoPlaylist());
-        await adicionarFaixas(pl.id, playlistAtual.map(t => trackUri(t.id)));
-
-        ultimaPlaylistCriada = {
-          id:pl.id,
-          url:pl.external_urls?.spotify || "",
-          name:pl.name || nome
-        };
-
-        saveJSON(STORAGE_KEYS.createdPlaylist, ultimaPlaylistCriada);
-        updateCreatedPlaylistLink();
-        updateLoginUI();
-
-        showAlert(`Playlist criada com sucesso: <a href="${ultimaPlaylistCriada.url}" target="_blank" rel="noopener noreferrer" style="color:#fff;font-weight:900;">abrir no Spotify</a>`, "success");
-      } catch(err){
-        let extra = "";
-        const m = String(err.message || "").toLowerCase();
-
-        if(m.includes("invalid redirect uri")){
-          extra = "<br><br>Confira se a Redirect URI cadastrada no Spotify Developer é exatamente igual à exibida na página.";
-        } else if(m.includes("insufficient client scope")){
-          extra = "<br><br>Saia e entre novamente para renovar os escopos.";
-        } else if(m.includes("user not registered")){
-          extra = "<br><br>Se a app estiver em modo de desenvolvimento, adicione seu usuário como tester no painel da app.";
-        }
-
-        showAlert(`Falha ao salvar playlist: ${escapeHtml(err.message || String(err))}${extra}`, "error");
-      } finally {
-        updateLoginUI();
-      }
-    }
-
-    function exportarJam(){
-      if(!playlistAtual.length){
-        showAlert("Não há jam para exportar.", "error");
-        return;
-      }
-
-      const payload = {
-        version:"github-1",
-        createdAt:new Date().toISOString(),
-        total:playlistAtual.length,
-        indiceAtual,
-        playlistNome:qs("playlist_nome").value,
-        playlistPublica:qs("playlist_publica").value,
-        evitarRepeticao:qs("evitar_repeticao").checked,
-        tracks:playlistAtual
-      };
-
-      const blob = new Blob([JSON.stringify(payload, null, 2)], { type:"application/json" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `jam-hiperfoco-github-${Date.now()}.json`;
-      a.click();
-      URL.revokeObjectURL(url);
-
-      showAlert("Jam exportada em JSON.", "success");
-    }
-
-    async function importarJamArquivo(file){
-      if(!file) return;
-
-      try{
-        const data = JSON.parse(await file.text());
-
-        if(!Array.isArray(data.tracks) || !data.tracks.length){
-          throw new Error("Arquivo JSON sem tracks válidas.");
-        }
-
-        playlistAtual = data.tracks.map(t => ({
-          catKey:t.catKey || "",
-          cat:t.cat || "Sem categoria",
-          id:t.id,
-          titulo:t.titulo || `Track ${t.id}`,
-          artistas:t.artistas || "",
-          cover:t.cover || ""
-        }));
-
-        indiceAtual = Number.isInteger(data.indiceAtual)
-          ? Math.max(0, Math.min(data.indiceAtual, playlistAtual.length - 1))
-          : 0;
-
-        if(data.playlistNome) qs("playlist_nome").value = data.playlistNome;
-        if(data.playlistPublica === "true" || data.playlistPublica === "false") qs("playlist_publica").value = data.playlistPublica;
-        if(typeof data.evitarRepeticao === "boolean") qs("evitar_repeticao").checked = data.evitarRepeticao;
-
-        await preencherMetadataFaixas(playlistAtual);
-        updateAllUI();
-        salvarJamLocalSilencioso();
-
-        showAlert("Jam importada com sucesso.", "success");
-      } catch(err){
-        showAlert(`Falha ao importar JSON: ${escapeHtml(err.message || String(err))}`, "error");
-      } finally {
-        qs("importFile").value = "";
-      }
-    }
-
-    async function copiarLinks(){
-      if(!playlistAtual.length){
-        showAlert("Não há jam para copiar.", "error");
-        return;
-      }
-
-      await navigator.clipboard.writeText(playlistAtual.map(t => trackUrl(t.id)).join("\n"));
-      showAlert("Links copiados.", "success");
-    }
-
-    async function copiarUris(){
-      if(!playlistAtual.length){
-        showAlert("Não há jam para copiar.", "error");
-        return;
-      }
-
-      await navigator.clipboard.writeText(playlistAtual.map(t => trackUri(t.id)).join("\n"));
-      showAlert("URIs copiadas.", "success");
-    }
-
-    function salvarJamLocalSilencioso(){
-      if(!playlistAtual.length) return;
-
-      saveJSON(STORAGE_KEYS.jam, {
-        playlistAtual,
-        indiceAtual,
-        playlistNome:qs("playlist_nome").value,
-        playlistPublica:qs("playlist_publica").value,
-        evitarRepeticao:qs("evitar_repeticao").checked,
-        totalMusicas:qs("total_musicas").value,
-        percentuais:Object.fromEntries(idsCampos.map(id => [id, qs(id).value])),
-        salvarAuto:qs("salvar_auto").checked
-      });
-    }
-
-    function salvarJamLocal(){
-      if(!playlistAtual.length){
-        showAlert("Não há jam para salvar localmente.", "error");
-        return;
-      }
-
-      salvarJamLocalSilencioso();
-      showAlert("Jam salva localmente no navegador.", "success");
-    }
-
-    async function carregarJamLocal(){
-      const data = loadJSON(STORAGE_KEYS.jam);
-
-      if(!data || !Array.isArray(data.playlistAtual) || !data.playlistAtual.length){
-        showAlert("Nenhuma jam local encontrada.", "error");
-        return;
-      }
-
-      playlistAtual = data.playlistAtual;
-      indiceAtual = Math.max(0, Math.min(data.indiceAtual || 0, playlistAtual.length - 1));
-
-      if(data.playlistNome) qs("playlist_nome").value = data.playlistNome;
-      if(data.playlistPublica) qs("playlist_publica").value = data.playlistPublica;
-      if(typeof data.evitarRepeticao === "boolean") qs("evitar_repeticao").checked = data.evitarRepeticao;
-      if(data.totalMusicas) qs("total_musicas").value = data.totalMusicas;
-      if(typeof data.salvarAuto === "boolean") qs("salvar_auto").checked = data.salvarAuto;
-
-      if(data.percentuais){
-        Object.entries(data.percentuais).forEach(([id,val]) => {
-          if(qs(id)) qs(id).value = val;
-        });
-      }
-
-      await preencherMetadataFaixas(playlistAtual);
-      updateAllUI();
-      showAlert("Jam local carregada com sucesso.", "success");
-    }
-
-    async function inicializarApp(){
-      updateRedirectInfo();
-      updateDeviceInfo();
-
-      const saved = loadJSON(STORAGE_KEYS.createdPlaylist);
-      if(saved) ultimaPlaylistCriada = saved;
-
-      if(!qs("playlist_nome").value.trim()){
-        qs("playlist_nome").value = defaultPlaylistName();
-      }
-
-      qs("importFile").addEventListener("change", e => importarJamArquivo(e.target.files?.[0]));
-
-      await tratarCallbackSpotify();
-
-      if(loadJSON(STORAGE_KEYS.token)){
-        await carregarUsuarioSpotify();
-      }
-
-      const jam = loadJSON(STORAGE_KEYS.jam);
-      if(jam?.playlistAtual?.length){
-        playlistAtual = jam.playlistAtual;
-        indiceAtual = Math.max(0, Math.min(jam.indiceAtual || 0, playlistAtual.length - 1));
-
-        if(jam.playlistNome) qs("playlist_nome").value = jam.playlistNome;
-        if(jam.playlistPublica) qs("playlist_publica").value = jam.playlistPublica;
-        if(typeof jam.evitarRepeticao === "boolean") qs("evitar_repeticao").checked = jam.evitarRepeticao;
-        if(jam.totalMusicas) qs("total_musicas").value = jam.totalMusicas;
-        if(typeof jam.salvarAuto === "boolean") qs("salvar_auto").checked = jam.salvarAuto;
-
-        if(jam.percentuais){
-          Object.entries(jam.percentuais).forEach(([id,val]) => {
-            if(qs(id)) qs(id).value = val;
-          });
-        }
-
-        await preencherMetadataFaixas(playlistAtual);
-      }
-
-      updateAllUI();
-    }
-
-    window.addEventListener("load", inicializarApp);
+    // =========================
+    // INÍCIO
+    // =========================
+    renderChecklist();
+    autoRedirectToday();
   </script>
 </body>
 </html>
